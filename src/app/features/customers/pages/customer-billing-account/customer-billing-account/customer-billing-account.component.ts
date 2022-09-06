@@ -7,6 +7,7 @@ import { CustomersService } from '../../../services/customer/customers.service';
 import { Address } from '../../../models/address';
 import { Customer } from '../../../models/customer';
 import { BillingAccount } from '../../../models/billingAccount';
+import { MessageService } from 'primeng/api';
 
 @Component({
   templateUrl: './customer-billing-account.component.html',
@@ -28,7 +29,8 @@ export class CustomerBillingAccountComponent implements OnInit {
     private cityService: CityService,
     private customerService: CustomersService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -103,6 +105,26 @@ export class CustomerBillingAccountComponent implements OnInit {
     console.log(this.billingAccount);
     this.customerService
       .addBillingAccount(this.billingAccount, this.customer)
-      .subscribe();
+      .subscribe({
+        next: () => {
+          this.messageService.add({
+            detail: 'Sucsessfully added',
+            severity: 'success',
+            summary: 'Add',
+            key: 'etiya-custom',
+          });
+          this.router.navigateByUrl(
+            `/dashboard/customers/customer-billing-account-detail/${this.selectedCustomerId}`
+          );
+        },
+        error: (err) => {
+          this.messageService.add({
+            detail: 'Error created',
+            severity: 'danger',
+            summary: 'Error',
+            key: 'etiya-custom',
+          });
+        },
+      });
   }
 }

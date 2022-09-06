@@ -30,7 +30,18 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="firstName"
+                    maxlength="50"
                   />
+                  <div
+                    *ngIf="
+                      profileForm.get('firstName')?.hasError('required') &&
+                      profileForm.get('firstName')?.dirty
+                    "
+                    id="email-help"
+                    class="p-error block ng-invalid ng-dirty"
+                  >
+                    First Name is not available.
+                  </div>
                 </div>
               </div>
             </div>
@@ -48,6 +59,7 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="middleName"
+                    maxlength="50"
                   />
                 </div>
               </div>
@@ -66,6 +78,7 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="lastName"
+                    maxlength="50"
                   />
                 </div>
               </div>
@@ -102,6 +115,7 @@
                     <select name="gender" id="gender" formControlName="gender">
                       <option selected value="Female">Female</option>
                       <option value="Male">Male</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
@@ -121,6 +135,7 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="fatherName"
+                    maxlength="50"
                   />
                 </div>
               </div>
@@ -139,6 +154,7 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="motherName"
+                    maxlength="50"
                   />
                 </div>
               </div>
@@ -154,9 +170,10 @@
                   class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
                 >
                   <input
-                    type="text"
+                    type="number"
                     etiyaInput="dark"
                     formControlName="nationalityId"
+                    onKeyPress="if(this.value.length==11) return false;"
                   />
                 </div>
               </div>
@@ -174,17 +191,8 @@
               CANCEL
             </button>
           </div>
-          <div
-            *ngIf="!profileForm.invalid"
-            class="col-12 col-lg-5 d-flex justify-content-lg-end"
-          >
+          <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
             <button etiyaButton="clear" (click)="goNextPage()">NEXT</button>
-          </div>
-          <div
-            *ngIf="profileForm.invalid"
-            class="col-12 col-lg-5 d-flex justify-content-lg-end"
-          >
-            <button etiyaButton="clear-disabled" disabled>NEXT</button>
           </div>
         </div>
       </div>

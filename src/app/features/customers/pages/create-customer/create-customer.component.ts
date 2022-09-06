@@ -1,15 +1,10 @@
 import { map, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Customer } from '../../models/customer';
 import { CustomersService } from '../../services/customer/customers.service';
 import { Router } from '@angular/router';
-import { CustomerDemographicInfo } from '../../models/customerDemographicInfo';
+import { MessageService } from 'primeng/api';
 
 @Component({
   templateUrl: './create-customer.component.html',
@@ -22,7 +17,8 @@ export class CreateCustomerComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private customerService: CustomersService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) {
     this.createCustomerModel$ = this.customerService.customerToAddModel$;
   }
@@ -40,13 +36,27 @@ export class CreateCustomerComponent implements OnInit {
       middleName: [this.customer.middleName],
       lastName: [this.customer.lastName, Validators.required],
       birthDate: [this.customer.birthDate, Validators.required],
-      gender: [this.customer.gender ?? 'Female', Validators.required],
+      gender: [this.customer.gender, Validators.required],
       fatherName: [this.customer.fatherName],
       motherName: [this.customer.motherName],
-      nationalityId: [this.customer.nationalityId, Validators.required],
+      nationalityId: [
+        this.customer.nationalityId,
+        [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+        ],
+      ],
     });
   }
   goNextPage() {
+    if (this.profileForm.invalid) {
+      this.messageService.add({
+        detail: 'Enter required fields',
+        key: 'etiya-warn',
+      });
+      return;
+    }
     this.customerService.setDemographicInfoToStore(this.profileForm.value);
     this.router.navigateByUrl('/dashboard/customers/list-address-info');
   }

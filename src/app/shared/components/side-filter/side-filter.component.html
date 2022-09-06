@@ -9,35 +9,102 @@
 
   <div class="e-input-container">
     <form [formGroup]="searchForm">
-      <label class="e-label mt-4">ID NUMBER</label>
-      <input type="text" etiyaInput="dark" formControlName="id" />
+      <label class="e-label mt-4">Nationality ID</label>
+      <input
+        type="number"
+        etiyaInput="dark"
+        formControlName="nationalityId"
+        onKeyPress="if(this.value.length==11) return false;"
+        #nationalityId
+      />
 
-      <label class="e-label">CUSTOMER ID</label>
-      <input type="text" etiyaInput="dark" formControlName="customerId" />
+      <label class="e-label">Customer ID</label>
+      <input
+        type="number"
+        etiyaInput="dark"
+        formControlName="customerId"
+        onKeyPress="if(this.value.length==10) return false;"
+        #customerId
+      />
 
-      <label class="e-label">ACCOUNT NUMBER</label>
-      <input type="text" etiyaInput="dark" formControlName="accountNumber" />
+      <label class="e-label">Account Number</label>
+      <input
+        type="number"
+        etiyaInput="dark"
+        formControlName="accountNumber"
+        onKeyPress="if(this.value.length==10) return false;"
+        #accountNumber
+      />
 
-      <label class="e-label">GSM NUMBER</label>
-      <input type="text" etiyaInput="dark" formControlName="gsmNumber" />
+      <label class="e-label">GSM Number</label>
+      <input
+        type="number"
+        etiyaInput="dark"
+        formControlName="gsmNumber"
+        onKeyPress="if(this.value.length==10) return false;"
+        #gsmNumber
+      />
 
-      <label class="e-label">FIRST NAME</label>
-      <input type="text" etiyaInput="dark" formControlName="firstName" />
+      <label class="e-label">First Name</label>
+      <input
+        type="text"
+        etiyaInput="dark"
+        formControlName="firstName"
+        maxlength="50"
+        #firstName
+      />
 
-      <label class="e-label">LAST NAME</label>
-      <input type="text" etiyaInput="dark" formControlName="lastname" />
+      <label class="e-label">Last Name</label>
+      <input
+        type="text"
+        etiyaInput="dark"
+        formControlName="lastName"
+        maxlength="50"
+        #lastName
+      />
 
-      <label class="e-label">ORDER NUMBER</label>
-      <input type="text" etiyaInput="dark" formControlName="orderNumber" />
+      <label class="e-label">Order Number</label>
+      <input
+        type="number"
+        etiyaInput="dark"
+        formControlName="orderNumber"
+        onKeyPress="if(this.value.length==16) return false;"
+        #orderNumber
+      />
     </form>
   </div>
   <div class="e-btn-container">
     <button type="button" etiyaButton="clear" (click)="clear()">CLEAR</button>
-    <button type="button" etiyaButton="search" (click)="search()">
+    <button
+      type="button"
+      etiyaButton="search"
+      (click)="search()"
+      [disabled]="
+        nationalityId.value.length === 0 &&
+        customerId.value.length === 0 &&
+        accountNumber.value.length === 0 &&
+        gsmNumber.value.length === 0 &&
+        firstName.value.length === 0 &&
+        lastName.value.length === 0 &&
+        orderNumber.value.length === 0
+      "
+    >
       SEARCH<img
         etiyaButton="img-search"
         src="../assets/img/search-btn-logo.png"
       />
+    </button>
+  </div>
+  <div class="e-btn-container">
+    <button
+      etiyaButton="create"
+      class="e-btn-create-customer"
+      routerLink="/dashboard/customers/create-customer"
+    >
+      <img
+        etiyaButton="create-logo"
+        src="./assets/img/create_btn_logo.png"
+      />CREATE CUSTOMER
     </button>
   </div>
 </div>

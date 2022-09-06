@@ -41,9 +41,9 @@ export class CustomersService {
     this.httpClient.get<Customer[]>(this.apiControllerUrl).subscribe({
       next: (response) => {
         let filteredCustomers = response;
-        if (searchCustomer.id) {
+        if (searchCustomer.nationalityId) {
           filteredCustomers = filteredCustomers.filter(
-            (item) => item.id == searchCustomer.id
+            (item) => item.nationalityId == searchCustomer.nationalityId
           );
         }
         if (searchCustomer.customerId) {
@@ -60,9 +60,10 @@ export class CustomersService {
         }
 
         if (searchCustomer.gsmNumber) {
-          filteredCustomers = filteredCustomers.filter(
-            (item) =>
-              item.contactMedium!.mobilePhone == searchCustomer.gsmNumber
+          filteredCustomers = filteredCustomers.filter((item) =>
+            item
+              .contactMedium!.mobilePhone.replace(/\s/g, '')
+              .includes(searchCustomer.gsmNumber)
           );
         }
 
@@ -73,11 +74,11 @@ export class CustomersService {
               .includes(searchCustomer.firstName.toLowerCase())
           );
         }
-        if (searchCustomer.lastname) {
+        if (searchCustomer.lastName) {
           filteredCustomers = filteredCustomers.filter((item) =>
             item
               .lastName!.toLowerCase()
-              .includes(searchCustomer.lastname.toLowerCase())
+              .includes(searchCustomer.lastName.toLowerCase())
           );
         }
         if (searchCustomer.orderNumber) {

@@ -115,3 +115,8 @@
 .e-title-container {
   position: relative;
 }
+
+.e-btn-create-customer {
+  width: 87%;
+  margin-top: 2rem;
+}

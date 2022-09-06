@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { CustomersService } from 'src/app/features/customers/services/customer/customers.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class SideFilterComponent implements OnInit {
   @Output() filteredData: any = new EventEmitter();
   constructor(
     private formBuilder: FormBuilder,
-    private customersService: CustomersService
+    private customersService: CustomersService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -22,17 +24,26 @@ export class SideFilterComponent implements OnInit {
 
   createSearchForm(): void {
     this.searchForm = this.formBuilder.group({
-      id: [''],
-      customerId: [''],
-      accountNumber: [''],
-      gsmNumber: [''],
-      firstName: [''],
-      lastname: [''],
-      orderNumber: [''],
+      nationalityId: ['', [Validators.min(1), Validators.maxLength(11)]],
+      customerId: ['', [Validators.min(1), Validators.maxLength(10)]],
+      accountNumber: ['', [Validators.min(1), Validators.maxLength(10)]],
+      gsmNumber: ['', [Validators.min(1), Validators.maxLength(10)]],
+      firstName: ['', [Validators.maxLength(50)]],
+      lastName: ['', [Validators.maxLength(50)]],
+      orderNumber: ['', [Validators.min(1), Validators.maxLength(16)]],
     });
   }
 
   search() {
+    if (this.searchForm.invalid) {
+      this.messageService.add({
+        detail: 'Please Check The Fields!',
+        severity: 'danger',
+        summary: 'Error',
+        key: 'etiya-custom',
+      });
+      return;
+    }
     this.customersService
       .getListByFilter(this.searchForm.value)
       .subscribe((data) => {
