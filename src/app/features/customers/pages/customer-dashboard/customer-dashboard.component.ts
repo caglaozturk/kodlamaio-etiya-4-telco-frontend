@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CustomerDashboardComponent implements OnInit {
   customerList!: Customer[];
   filteredCustomerList!: Customer[];
-  lenght!: number;
+  lenght: number = -1;
 
   constructor(
     private customersService: CustomersService,
@@ -30,6 +30,10 @@ export class CustomerDashboardComponent implements OnInit {
   search(event: any) {
     this.filteredCustomerList = event;
     this.lenght = this.filteredCustomerList.length;
+    console.log(
+      '🚀 ~ file: customer-dashboard.component.ts ~ line 33 ~ CustomerDashboardComponent ~ search ~ this.lenght',
+      this.lenght
+    );
   }
 
   getCustomerId(customer: Customer) {
