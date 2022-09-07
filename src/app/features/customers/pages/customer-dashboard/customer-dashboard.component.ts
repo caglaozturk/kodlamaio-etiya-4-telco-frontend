@@ -30,10 +30,6 @@ export class CustomerDashboardComponent implements OnInit {
   search(event: any) {
     this.filteredCustomerList = event;
     this.lenght = this.filteredCustomerList.length;
-    console.log(
-      '🚀 ~ file: customer-dashboard.component.ts ~ line 33 ~ CustomerDashboardComponent ~ search ~ this.lenght',
-      this.lenght
-    );
   }
 
   getCustomerId(customer: Customer) {

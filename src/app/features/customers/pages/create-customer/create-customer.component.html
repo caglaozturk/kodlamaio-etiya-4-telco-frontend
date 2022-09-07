@@ -18,43 +18,38 @@
           <div class="row">
             <div class="col-12 col-lg-6">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="first-name">First Name* </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
                     formControlName="firstName"
+                    aria-describedby="firstName-help"
                     maxlength="50"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && profileForm.controls['firstName'].errors
+                    }"
                   />
-                  <div
-                    *ngIf="
-                      profileForm.get('firstName')?.hasError('required') &&
-                      profileForm.get('firstName')?.dirty
-                    "
-                    id="email-help"
+                  <small
+                    *ngIf="isShow && profileForm.controls['firstName'].errors"
+                    id="firstName-help"
                     class="p-error block ng-invalid ng-dirty"
+                    etiyaError="error-text"
                   >
-                    First Name is not available.
-                  </div>
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="middle-name">Middle Name </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
@@ -66,71 +61,97 @@
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="last-name">Last Name* </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
                     formControlName="lastName"
                     maxlength="50"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && profileForm.controls['lastName'].errors
+                    }"
                   />
+                  <small
+                    *ngIf="isShow && profileForm.controls['lastName'].errors"
+                    id="lastName-help"
+                    class="p-error block ng-invalid ng-dirty"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="birth-date">Birth Date* </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="date"
+                    min="1900-01-01"
                     etiyaInput="dark"
                     formControlName="birthDate"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && profileForm.controls['birthDate'].errors
+                    }"
                   />
+                  <small
+                    *ngIf="isShow && profileForm.controls['birthDate'].errors"
+                    id="birthDate-help"
+                    class="p-error block ng-invalid ng-dirty"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="gender">Gender*</label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <div class="e-dropdown">
-                    <select name="gender" id="gender" formControlName="gender">
-                      <option selected value="Female">Female</option>
+                    <select
+                      name="gender"
+                      id="gender"
+                      formControlName="gender"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isShow && profileForm.controls['gender'].errors
+                      }"
+                    >
+                      <option selected disabled value="">Select</option>
+                      <option value="Female">Female</option>
                       <option value="Male">Male</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
+                  <small
+                    *ngIf="isShow && profileForm.controls['gender'].errors"
+                    id="gender-help"
+                    class="p-error block ng-invalid ng-dirty mt-0"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="father-name">Father Name </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
@@ -142,14 +163,10 @@
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="mother-name">Mother Name </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
@@ -161,20 +178,30 @@
             </div>
             <div class="col-12 col-lg-6 d=flex justify-content-start mb-5">
               <div class="row e-customer-input">
-                <div
-                  class="col-12 col-lg-4 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-4">
                   <label for="national-id">Nationality ID* </label>
                 </div>
-                <div
-                  class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-                >
+                <div class="col-12 col-lg-8 d-flex flex-column">
                   <input
                     type="number"
                     etiyaInput="dark"
                     formControlName="nationalityId"
                     onKeyPress="if(this.value.length==11) return false;"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && profileForm.controls['nationalityId'].errors
+                    }"
                   />
+                  <small
+                    *ngIf="
+                      isShow && profileForm.controls['nationalityId'].errors
+                    "
+                    id="nationalityId-help"
+                    class="p-error block ng-invalid ng-dirty"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
@@ -182,7 +209,7 @@
         </form>
       </div>
       <div class="d-flex justify-content-center">
-        <div class="row mt-5 w-75">
+        <div class="row mt-3 w-75">
           <div class="col-12 col-lg-6 d-flex justify-content-lg-start">
             <button
               etiyaButton="clear"

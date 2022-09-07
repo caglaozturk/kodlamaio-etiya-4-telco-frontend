@@ -34,6 +34,8 @@ import { TableScrollComponent } from './components/table-scroll/table-scroll.com
 import { TableAccordionHeaderComponent } from './components/table-accordion-header/table-accordion-header.component';
 import { StoreModule } from '@ngrx/store';
 import { sharedReducers } from './store/shared.reducers';
+import { ErrorDirective } from './directives/error.directive';
+import { StandardToastComponent } from './components/standard-toast/standard-toast.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { sharedReducers } from './store/shared.reducers';
     CheckBoxDirective,
     TableScrollComponent,
     TableAccordionHeaderComponent,
+    ErrorDirective,
+    StandardToastComponent,
   ],
   imports: [
     CommonModule,
@@ -98,6 +102,8 @@ import { sharedReducers } from './store/shared.reducers';
     InputDirective,
     TableScrollComponent,
     TableAccordionHeaderComponent,
+    ErrorDirective,
+    StandardToastComponent,
   ],
   providers: [MessageService],
 })

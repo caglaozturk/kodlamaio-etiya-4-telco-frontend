@@ -22,13 +22,35 @@
                     >Email<span class="e-star">*</span>
                   </label>
                 </div>
-                <div class="col-12 col-lg-8 e-contact-col-center">
+                <div class="col-12 col-lg-8 flex-column">
                   <input
                     type="email"
+                    email
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="email"
+                    maxlength="350"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && contactForm.controls['email'].errors
+                    }"
                   />
+                  <small
+                    *ngIf="isShow && f['email'].errors?.['required']"
+                    id="email-help"
+                    class="p-error block ng-invalid ng-dirty mt-0"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
+                  <small
+                    *ngIf="isShow && f['email'].errors?.['pattern']"
+                    id="email-help"
+                    class="p-error block ng-invalid ng-dirty mt-0"
+                    etiyaError="error-text"
+                  >
+                    Information entered is incorrect !
+                  </small>
                 </div>
               </div>
             </div>
@@ -37,12 +59,13 @@
                 <div class="col-12 col-lg-4 e-contact-col-center">
                   <label for="middle-name">Home Phone </label>
                 </div>
-                <div class="col-12 col-lg-8 e-contact-col-center">
+                <div class="col-12 col-lg-8 flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="homePhone"
+                    maxlength="11"
                   />
                 </div>
               </div>
@@ -54,13 +77,26 @@
                     >Mobile Phone<span class="e-star">*</span>
                   </label>
                 </div>
-                <div class="col-12 col-lg-8 e-contact-col-center">
+                <div class="col-12 col-lg-8 flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="mobilePhone"
+                    maxlength="10"
+                    [ngClass]="{
+                      'e-invalid-input':
+                        isShow && contactForm.controls['mobilePhone'].errors
+                    }"
                   />
+                  <small
+                    *ngIf="isShow && contactForm.controls['mobilePhone'].errors"
+                    id="mobilePhone-help"
+                    class="p-error block ng-invalid ng-dirty mt-0"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
@@ -69,12 +105,13 @@
                 <div class="col-12 col-lg-4 e-contact-col-center">
                   <label for="birth-date">Fax </label>
                 </div>
-                <div class="col-12 col-lg-8 e-contact-col-center">
+                <div class="col-12 col-lg-8 flex-column">
                   <input
                     type="text"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="fax"
+                    maxlength="13"
                   />
                 </div>
               </div>

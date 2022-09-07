@@ -14,6 +14,7 @@
         type="number"
         etiyaInput="dark"
         formControlName="nationalityId"
+        onkeydown="return event.keyCode !== 69"
         onKeyPress="if(this.value.length==11) return false;"
         #nationalityId
       />
@@ -23,6 +24,7 @@
         type="number"
         etiyaInput="dark"
         formControlName="customerId"
+        onkeydown="return event.keyCode !== 69"
         onKeyPress="if(this.value.length==10) return false;"
         #customerId
       />
@@ -32,6 +34,7 @@
         type="number"
         etiyaInput="dark"
         formControlName="accountNumber"
+        onkeydown="return event.keyCode !== 69"
         onKeyPress="if(this.value.length==10) return false;"
         #accountNumber
       />
@@ -41,6 +44,7 @@
         type="number"
         etiyaInput="dark"
         formControlName="gsmNumber"
+        onkeydown="return event.keyCode !== 69"
         onKeyPress="if(this.value.length==10) return false;"
         #gsmNumber
       />
@@ -68,6 +72,7 @@
         type="number"
         etiyaInput="dark"
         formControlName="orderNumber"
+        onkeydown="return event.keyCode !== 69"
         onKeyPress="if(this.value.length==16) return false;"
         #orderNumber
       />

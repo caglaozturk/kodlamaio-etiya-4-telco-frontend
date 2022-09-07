@@ -14,6 +14,8 @@ export class CreateCustomerComponent implements OnInit {
   profileForm!: FormGroup;
   createCustomerModel$!: Observable<Customer>;
   customer!: Customer;
+  isShow: Boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private customerService: CustomersService,
@@ -26,37 +28,37 @@ export class CreateCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.createCustomerModel$.subscribe((state) => {
       this.customer = state;
-      this.createFormUpdateCustomer();
+      this.createFormAddCustomer();
     });
   }
 
-  createFormUpdateCustomer() {
+  createFormAddCustomer() {
     this.profileForm = this.formBuilder.group({
       firstName: [this.customer.firstName, Validators.required],
       middleName: [this.customer.middleName],
       lastName: [this.customer.lastName, Validators.required],
       birthDate: [this.customer.birthDate, Validators.required],
-      gender: [this.customer.gender, Validators.required],
+      gender: [this.customer.gender ?? '', Validators.required],
       fatherName: [this.customer.fatherName],
       motherName: [this.customer.motherName],
       nationalityId: [
         this.customer.nationalityId,
-        [
-          Validators.required,
-          Validators.minLength(11),
-          Validators.maxLength(11),
-        ],
+        [Validators.pattern('^[0-9]{11}$'), Validators.required],
       ],
     });
   }
   goNextPage() {
     if (this.profileForm.invalid) {
+      this.isShow = true;
       this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
         detail: 'Enter required fields',
-        key: 'etiya-warn',
+        key: 'etiya-standard',
       });
       return;
     }
+    this.isShow = false;
     this.customerService.setDemographicInfoToStore(this.profileForm.value);
     this.router.navigateByUrl('/dashboard/customers/list-address-info');
   }

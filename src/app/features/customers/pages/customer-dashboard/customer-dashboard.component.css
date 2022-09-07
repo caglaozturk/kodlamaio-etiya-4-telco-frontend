@@ -21,3 +21,6 @@
 ::ng-deep .table.e-table .table-body tr th a {
   cursor: pointer;
 }
+::ng-deep .table.e-table .table-body tr th a:hover {
+  border-bottom: 2px solid white;
+}

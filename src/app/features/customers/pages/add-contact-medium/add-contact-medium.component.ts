@@ -13,6 +13,7 @@ import { CustomersService } from '../../services/customer/customers.service';
 export class AddContactMediumComponent implements OnInit {
   contactForm!: FormGroup;
   customer!: Customer;
+  isShow: Boolean = false;
   constructor(
     private customersService: CustomersService,
     private router: Router,
@@ -28,14 +29,29 @@ export class AddContactMediumComponent implements OnInit {
   }
   createFormContactMedium() {
     this.contactForm = this.formBuilder.group({
-      email: [this.customer.contactMedium?.email, Validators.required],
-      homePhone: [this.customer.contactMedium?.homePhone, Validators.required],
+      email: [
+        this.customer.contactMedium?.email,
+        [
+          Validators.required,
+          Validators.maxLength(350),
+          Validators.email,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
+      homePhone: [
+        this.customer.contactMedium?.homePhone,
+        [Validators.maxLength(11)],
+      ],
       mobilePhone: [
         this.customer.contactMedium?.mobilePhone,
-        Validators.required,
+        [Validators.required, Validators.maxLength(10)],
       ],
-      fax: [this.customer.contactMedium?.fax, Validators.required],
+      fax: [this.customer.contactMedium?.fax, [Validators.maxLength(13)]],
     });
+  }
+
+  get f() {
+    return this.contactForm.controls;
   }
 
   goToPreviousPage() {
@@ -48,6 +64,11 @@ export class AddContactMediumComponent implements OnInit {
   }
 
   saveCustomer() {
+    if (this.contactForm.invalid) {
+      this.isShow = true;
+      return;
+    }
+    this.isShow = false;
     this.saveContactMediumToStore();
     this.customersService.add(this.customer).subscribe({
       next: (data) => {
@@ -57,7 +78,11 @@ export class AddContactMediumComponent implements OnInit {
           summary: 'Add',
           key: 'etiya-custom',
         });
-        this.router.navigateByUrl('/dashboard/customers/customer-dashboard');
+        console.log(data.id);
+        //this.router.navigateByUrl('/dashboard/customers/customer-dashboard');
+
+        // Todo: route değişecek
+        //this.router.navigateByUrl(`/dashboard/customers/customer-info/${data.id}`);
       },
       error: (err) => {
         this.messageService.add({

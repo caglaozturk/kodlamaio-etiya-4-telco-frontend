@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { CityService } from 'src/app/features/city/services/city/city.service';
 import { City } from '../../models/city';
 import { CustomersService } from '../../services/customer/customers.service';
@@ -18,12 +19,14 @@ import { CustomersService } from '../../services/customer/customers.service';
 export class AddAddressInfoComponent implements OnInit {
   addressForm!: FormGroup;
   cityList!: City[];
+  isShow: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private customersService: CustomersService,
     private router: Router,
-    private cityService: CityService
+    private cityService: CityService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +44,11 @@ export class AddAddressInfoComponent implements OnInit {
   }
 
   addAddress() {
+    if (this.addressForm.invalid) {
+      this.isShow = true;
+      return;
+    }
+    this.isShow = false;
     this.customersService.addAddressInfoToStore(this.addressForm.value);
     this.router.navigateByUrl('/dashboard/customers/list-address-info');
   }

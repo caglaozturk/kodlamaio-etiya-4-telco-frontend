@@ -65,6 +65,7 @@
         <button
           etiyaButton="clear"
           routerLink="/dashboard/customers/contact-medium"
+          [disabled]="!customer.addresses || customer.addresses.length == 0"
         >
           NEXT
         </button>
