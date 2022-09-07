@@ -60,10 +60,10 @@ export class CustomersService {
         }
 
         if (searchCustomer.gsmNumber) {
-          filteredCustomers = filteredCustomers.filter((item) =>
-            item
-              .contactMedium!.mobilePhone.replace(/\s/g, '')
-              .includes(searchCustomer.gsmNumber)
+          filteredCustomers = filteredCustomers.filter(
+            (item) =>
+              item.contactMedium!.mobilePhone.replace(/\s/g, '') ==
+              searchCustomer.gsmNumber
           );
         }
 
