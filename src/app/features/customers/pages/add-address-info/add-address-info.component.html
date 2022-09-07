@@ -12,7 +12,7 @@
       <div class="address-title mb-5">
         <app-info-title [infoTitle]="'Address Info'"></app-info-title>
       </div>
-      <div class="d-flex justify-content-center m-8">
+      <div class="d-flex justify-content-center m-5">
         <div class="e-address-form-container">
           <div class="row">
             <a class="e-form-close" routerLink="/list-address-info">X</a>
@@ -47,7 +47,7 @@
                     <small
                       *ngIf="isShow && addressForm.controls['city'].errors"
                       id="city-help"
-                      class="p-error block ng-invalid ng-dirty mt-0"
+                      class="p-error block ng-invalid ng-dirty e-error-msg"
                       etiyaError="error-text"
                     >
                       * Empty areas must be entered
@@ -78,7 +78,7 @@
                         isShow && addressForm.controls['flatNumber'].errors
                       "
                       id="flatNumber-help"
-                      class="p-error block ng-invalid ng-dirty mt-0"
+                      class="p-error block ng-invalid ng-dirty e-error-msg"
                       etiyaError="error-text"
                     >
                       * Empty areas must be entered
@@ -107,7 +107,7 @@
                     <small
                       *ngIf="isShow && addressForm.controls['street'].errors"
                       id="street-help"
-                      class="p-error block ng-invalid ng-dirty mt-0"
+                      class="p-error block ng-invalid ng-dirty e-error-msg"
                       etiyaError="error-text"
                     >
                       * Empty areas must be entered
@@ -138,7 +138,7 @@
                         isShow && addressForm.controls['description'].errors
                       "
                       id="description-help"
-                      class="p-error block ng-invalid ng-dirty mt-0"
+                      class="p-error block ng-invalid ng-dirty e-error-msg"
                       etiyaError="error-text"
                     >
                       * Empty areas must be entered
