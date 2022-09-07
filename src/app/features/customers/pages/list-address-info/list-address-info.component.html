@@ -21,6 +21,7 @@
                 <th class="col-2">Street Name</th>
                 <th class="col-2">Hause/Flat Number</th>
                 <th class="col-2">Address Description</th>
+                <th scope="col-2">Action</th>
               </tr>
             </thead>
             <tbody class="table-body">
@@ -34,6 +35,7 @@
                 <td>Null</td>
                 <td>Null</td>
                 <td>Null</td>
+                <td>Null</td>
               </tr>
               <ng-template #customerAddressList>
                 <tr *ngFor="let address of customer.addresses">
@@ -41,6 +43,19 @@
                   <td>{{ address.street }}</td>
                   <td>{{ address.flatNumber }}</td>
                   <td>{{ address.description }}</td>
+                  <td>
+                    <button
+                      (click)="selectAddressId(address.id)"
+                      etiyaButton="edit"
+                    ></button>
+                    <button
+                      (click)="removePopup(address)"
+                      etiyaButton="remove"
+                      [disabled]="
+                        customer.addresses && customer.addresses.length == 1
+                      "
+                    ></button>
+                  </td>
                 </tr>
               </ng-template>
             </tbody>
