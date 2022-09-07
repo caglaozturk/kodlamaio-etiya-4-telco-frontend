@@ -33,7 +33,7 @@ export class AddContactMediumComponent implements OnInit {
         this.customer.contactMedium?.email,
         [
           Validators.required,
-          Validators.maxLength(350),
+          Validators.maxLength(100),
           Validators.email,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ],
