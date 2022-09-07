@@ -61,11 +61,11 @@
                 </div>
                 <div class="col-12 col-lg-8 flex-column">
                   <input
-                    type="text"
+                    type="number"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="homePhone"
-                    maxlength="11"
+                    onKeyPress="if(this.value.length==11) return false;"
                   />
                 </div>
               </div>
@@ -79,11 +79,11 @@
                 </div>
                 <div class="col-12 col-lg-8 flex-column">
                   <input
-                    type="text"
+                    type="number"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="mobilePhone"
-                    maxlength="10"
+                    onKeyPress="if(this.value.length==10) return false;"
                     [ngClass]="{
                       'e-invalid-input':
                         isShow && contactForm.controls['mobilePhone'].errors
@@ -107,11 +107,11 @@
                 </div>
                 <div class="col-12 col-lg-8 flex-column">
                   <input
-                    type="text"
+                    type="number"
                     etiyaInput="dark"
                     class="e-contact-input"
                     formControlName="fax"
-                    maxlength="13"
+                    onKeyPress="if(this.value.length==13) return false;"
                   />
                 </div>
               </div>

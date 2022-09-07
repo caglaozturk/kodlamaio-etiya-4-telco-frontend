@@ -17,6 +17,17 @@
   margin-left: 30px;
 }
 
+.e-btn-edit {
+  height: 36px;
+  width: 36px;
+}
+
+.e-btn-remove {
+  height: 36px;
+  width: 36px;
+  margin-left: -10px;
+}
+
 ::ng-deep .e-btn-edit {
   width: 35px;
   height: 39px;

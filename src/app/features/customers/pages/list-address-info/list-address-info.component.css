@@ -14,14 +14,15 @@
   font-size: 18px;
   line-height: 19px;
 }
-.table-body {
+.table-body td,
+.table-body tr th {
   font-family: 'Anybody';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 25px;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255);
 }
 .e-buttons {
   display: flex;
@@ -33,4 +34,14 @@
 }
 .e-btn-new-address {
   margin-left: 20px;
+}
+.e-btn-edit {
+  height: 36px;
+  width: 36px;
+}
+
+.e-btn-remove {
+  height: 36px;
+  width: 36px;
+  margin-left: -10px;
 }

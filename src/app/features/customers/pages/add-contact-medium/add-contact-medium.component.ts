@@ -78,11 +78,9 @@ export class AddContactMediumComponent implements OnInit {
           summary: 'Add',
           key: 'etiya-custom',
         });
-        console.log(data.id);
-        //this.router.navigateByUrl('/dashboard/customers/customer-dashboard');
-
-        // Todo: route değişecek
-        //this.router.navigateByUrl(`/dashboard/customers/customer-info/${data.id}`);
+        this.router.navigateByUrl(
+          `/dashboard/customers/customer-info/${data.id}`
+        );
       },
       error: (err) => {
         this.messageService.add({

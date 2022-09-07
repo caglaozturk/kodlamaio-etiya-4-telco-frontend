@@ -36,10 +36,6 @@ export class ListAddressInfoComponent implements OnInit {
     this.router.navigateByUrl(`update-address-info/${address?.id}`);
   }
   removePopup(address: Address) {
-    if (this.customer.addresses && this.customer.addresses?.length <= 1) {
-      alert('1 adres varsa silemezsin.');
-      return;
-    }
     this.addressToDelete = address;
     this.messageService.add({
       key: 'c',
@@ -49,6 +45,6 @@ export class ListAddressInfoComponent implements OnInit {
     });
   }
   remove() {
-    this.customersService.removeAdress(this.addressToDelete);
+    this.customersService.removeAdressToStore(this.addressToDelete);
   }
 }

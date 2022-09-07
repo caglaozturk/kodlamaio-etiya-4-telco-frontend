@@ -15,7 +15,13 @@
       <div class="d-flex justify-content-center m-8">
         <div class="e-address-form-container">
           <div class="row">
-            <a class="e-form-close" routerLink="/list-address-info">X</a>
+            <a
+              class="e-form-close"
+              [routerLink]="
+                '/dashboard/customers/customer-address/' + selectedCustomerId
+              "
+              >X</a
+            >
           </div>
           <form *ngIf="addressForm" [formGroup]="addressForm">
             <div class="row">
