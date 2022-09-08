@@ -18,7 +18,7 @@
 
   <app-main-layout [layoutTitle]="'Contact Medium'">
     <div class="p-5"></div>
-    <div class="e-customer-content">
+    <div class="e-customer-content" *ngIf="customer.contactMedium">
       <div class="container">
         <div class="row">
           <div class="col-2">
@@ -26,7 +26,7 @@
           </div>
           <div class="col-4">
             <label class="e-frame-label">{{
-              customer.contactMedium?.email
+              customer.contactMedium.email
             }}</label>
           </div>
           <div class="col-2">
@@ -34,7 +34,7 @@
           </div>
           <div class="col-4">
             <label class="e-frame-label">{{
-              customer.contactMedium?.homePhone
+              customer.contactMedium.homePhone
             }}</label>
           </div>
         </div>
@@ -45,7 +45,7 @@
           </div>
           <div class="col-4">
             <label class="e-frame-label">{{
-              customer.contactMedium?.mobilePhone
+              customer.contactMedium.mobilePhone
             }}</label>
           </div>
           <div class="col-2">
@@ -53,7 +53,7 @@
           </div>
           <div class="col-4">
             <label class="e-frame-label">{{
-              customer.contactMedium?.fax
+              customer.contactMedium.fax
             }}</label>
           </div>
         </div>

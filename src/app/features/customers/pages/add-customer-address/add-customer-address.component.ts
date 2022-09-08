@@ -19,6 +19,7 @@ export class AddCustomerAddressComponent implements OnInit {
   customer!: Customer;
   addressToUpdate!: Address;
   cityList!: City[];
+  isShow: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -84,6 +85,14 @@ export class AddCustomerAddressComponent implements OnInit {
       this.cityList = data;
     });
   }
+  checkValid() {
+    if (this.addressForm.invalid) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+    return this.isShow;
+  }
 
   save() {
     if (this.addressToUpdate === undefined) this.add();
@@ -91,6 +100,7 @@ export class AddCustomerAddressComponent implements OnInit {
   }
 
   add() {
+    if (this.checkValid()) return;
     const addressToAdd: Address = {
       ...this.addressForm.value,
       city: this.cityList.find(
@@ -121,6 +131,7 @@ export class AddCustomerAddressComponent implements OnInit {
   }
 
   update() {
+    if (this.checkValid()) return;
     const addressToUpdate: Address = {
       ...this.addressForm.value,
       id: this.selectedAddressId,

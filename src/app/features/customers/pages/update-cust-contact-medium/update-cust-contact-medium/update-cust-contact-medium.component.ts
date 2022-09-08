@@ -18,6 +18,7 @@ export class UpdateCustContactMediumComponent implements OnInit {
   updateCustomerContactForm!: FormGroup;
   selectedCustomerId!: number;
   customer!: Customer;
+  isShow: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,14 +34,35 @@ export class UpdateCustContactMediumComponent implements OnInit {
 
   createFormUpdateContactCustomer() {
     this.updateCustomerContactForm = this.formBuilder.group({
-      email: [this.customer.contactMedium?.email, Validators.required],
-      homePhone: [this.customer.contactMedium?.homePhone, Validators.required],
+      email: [
+        this.customer.contactMedium?.email,
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.email,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
+      homePhone: [
+        this.customer.contactMedium?.homePhone,
+        [Validators.maxLength(11), Validators.minLength(11)],
+      ],
       mobilePhone: [
         this.customer.contactMedium?.mobilePhone,
-        Validators.required,
+        [
+          Validators.required,
+          Validators.maxLength(10),
+          Validators.minLength(10),
+        ],
       ],
-      fax: [this.customer.contactMedium?.fax, Validators.required],
+      fax: [
+        this.customer.contactMedium?.fax,
+        [Validators.maxLength(13), Validators.minLength(13)],
+      ],
     });
+  }
+  get f() {
+    return this.updateCustomerContactForm.controls;
   }
   getCustomerById() {
     this.activatedRoute.params.subscribe((params) => {
@@ -66,13 +88,15 @@ export class UpdateCustContactMediumComponent implements OnInit {
   update() {
     if (this.updateCustomerContactForm.invalid) {
       this.messageService.add({
-        detail: 'Please fill required areas!',
-        severity: 'danger',
-        summary: 'error',
-        key: 'etiya-custom',
+        severity: 'error',
+        summary: 'Error',
+        detail: 'The information you entered is incorrect. Please try again',
+        key: 'etiya-standard',
       });
+      this.isShow = true;
       return;
     }
+    this.isShow = false;
     this.customersService
       .updateContactMedium(this.updateCustomerContactForm.value, this.customer)
       .subscribe(() => {

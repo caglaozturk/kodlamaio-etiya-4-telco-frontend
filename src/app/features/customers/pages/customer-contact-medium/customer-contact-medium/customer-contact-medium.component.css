@@ -10,10 +10,9 @@
 
 .e-customer-content {
   box-sizing: border-box;
-  margin-left: 60px;
   width: 1125px;
   height: 220px;
-  margin-left: 120px;
+  margin: auto;
   background: rgba(13, 43, 80, 0.7);
   border: 2px solid #f58220;
   border-radius: 22px;
@@ -104,4 +103,13 @@ label {
 }
 ::ng-deep .e-btn-edit:hover {
   border: 6px solid #f58220;
+}
+.e-btn-edit {
+  height: 45px;
+  width: 45px;
+}
+
+.e-btn-remove {
+  height: 45px;
+  width: 45px;
 }

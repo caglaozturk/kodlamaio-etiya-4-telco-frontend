@@ -28,48 +28,115 @@
           <div class="row">
             <div class="row d-flex justify-space-between align-items-center">
               <div class="col-6">
-                <div class="form-group">
-                  <label class="col-5" for="email">Email:</label>
-                  <input
-                    class="col-7"
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="email"
-                  />
+                <div class="form-group row p-2">
+                  <div class="col-5">
+                    <label for="email" class="d-flex align-items-center h-75"
+                      >Email<span class="e-star">*</span></label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="email"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isShow &&
+                          updateCustomerContactForm.controls['email'].errors
+                      }"
+                    />
+                    <small
+                      *ngIf="isShow && f['email'].errors?.['required']"
+                      id="email-help"
+                      class="p-error block ng-invalid ng-dirty mt-0"
+                      etiyaError="error-text"
+                    >
+                      Required areas must be entered
+                    </small>
+                    <small
+                      *ngIf="isShow && f['email'].errors?.['pattern']"
+                      id="email-help"
+                      class="p-error block ng-invalid ng-dirty mt-0"
+                      etiyaError="error-text"
+                    >
+                      Information entered is incorrect !
+                    </small>
+                  </div>
                 </div>
               </div>
               <div class="col-6 form-group">
-                <div class="form-group">
-                  <label class="col-5" for="homePhone">Home Phone :</label>
-                  <input
-                    class="col-7"
-                    type="text "
-                    etiyaInput="dark"
-                    formControlName="homePhone"
-                  />
+                <div class="form-group row p-2">
+                  <div class="col-5">
+                    <label
+                      for="homePhone"
+                      class="d-flex align-items-center h-75"
+                      >Home Phone</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="number"
+                      etiyaInput="dark"
+                      formControlName="homePhone"
+                      onKeyPress="if(this.value.length==11) return false;"
+                    />
+                  </div>
                 </div>
               </div>
 
               <div class="col-6">
-                <div class="form-group">
-                  <label class="col-5" for="mobilePhone">Mobile Phone :</label>
-                  <input
-                    class="col-7"
-                    type="text "
-                    etiyaInput="dark"
-                    formControlName="mobilePhone"
-                  />
+                <div class="form-group row p-2">
+                  <div class="col-5">
+                    <label
+                      for="mobilePhone"
+                      class="d-flex align-items-center h-75"
+                      >Mobile Phone<span class="e-star">*</span></label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="number"
+                      etiyaInput="dark"
+                      formControlName="mobilePhone"
+                      onKeyPress="if(this.value.length==10) return false;"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isShow &&
+                          updateCustomerContactForm.controls['mobilePhone']
+                            .errors
+                      }"
+                    />
+                    <small
+                      *ngIf="
+                        isShow &&
+                        updateCustomerContactForm.controls['mobilePhone'].errors
+                      "
+                      id="mobilePhone-help"
+                      class="p-error block ng-invalid ng-dirty e-error-msg"
+                      etiyaError="error-text"
+                    >
+                      Required areas must be entered
+                    </small>
+                  </div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="form-group">
-                  <label class="col-5" for="faxNumber">Fax :</label>
-                  <input
-                    class="col-7"
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="fax"
-                  />
+                <div class="form-group row p-2">
+                  <div class="col-5">
+                    <label
+                      for="faxNumber"
+                      class="d-flex align-items-center h-75"
+                      >Fax</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="number"
+                      etiyaInput="dark"
+                      formControlName="fax"
+                      onKeyPress="if(this.value.length==13) return false;"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
