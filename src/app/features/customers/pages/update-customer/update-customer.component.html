@@ -248,14 +248,23 @@
                     />
                     <small
                       *ngIf="
-                        isShow &&
-                        updateCustomerForm.controls['nationalityId'].errors
-                      "
+                      isShow && updateCustomerForm.controls['nationalityId'].errors?.['required']
+                    "
                       id="nationalityId-help"
                       class="p-error block ng-invalid ng-dirty"
                       etiyaError="error-text"
                     >
                       Required areas must be entered
+                    </small>
+                    <small
+                      *ngIf="
+                    isShow && updateCustomerForm.controls['nationalityId'].errors?.['pattern']
+                  "
+                      id="nationalityId-help"
+                      class="p-error block ng-invalid ng-dirty"
+                      etiyaError="error-text"
+                    >
+                      You must entered 11 digits
                     </small>
                   </div>
                 </div>

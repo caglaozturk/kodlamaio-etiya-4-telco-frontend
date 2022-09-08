@@ -66,24 +66,15 @@ export class UpdateCustomerComponent implements OnInit {
     }
   }
 
-  update() {
-    if (this.updateCustomerForm.invalid) {
-      this.messageService.add({
-        detail: 'Enter required fields',
-        severity: 'danger',
-        summary: 'Error',
-        key: 'etiya-custom',
-      });
-      this.isShow = true;
-      return;
-    }
+  updateCustomer() {
     this.isShow = false;
     const customer: Customer = Object.assign(
       { id: this.customer.id },
       this.updateCustomerForm.value
     );
-    this.customerService.update(customer, this.customer).subscribe(() => {
-      setTimeout(() => {
+    this.customerService
+      .updateDemographicInfo(customer, this.customer)
+      .subscribe(() => {
         this.router.navigateByUrl(
           `/dashboard/customers/customer-info/${customer.id}`
         );
@@ -93,7 +84,43 @@ export class UpdateCustomerComponent implements OnInit {
           summary: 'Update',
           key: 'etiya-custom',
         });
-      }, 1000);
+      });
+  }
+
+  checkInvalid() {
+    if (this.updateCustomerForm.invalid) {
+      this.isShow = true;
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Enter required fields',
+        key: 'etiya-standard',
+      });
+      return;
+    }
+    if (
+      this.updateCustomerForm.value.nationalityId ===
+      this.customer.nationalityId
+    )
+      this.updateCustomer();
+    else this.checkTcNum(this.updateCustomerForm.value.nationalityId);
+  }
+  checkTcNum(id: number) {
+    this.customerService.getList().subscribe((response) => {
+      let matchCustomer = response.find((item) => {
+        return item.nationalityId == id;
+      });
+      if (matchCustomer) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'A customer is already exist with this Nationality ID',
+          key: 'etiya-standard',
+        });
+      } else this.updateCustomer();
     });
+  }
+  update() {
+    this.checkInvalid();
   }
 }
