@@ -75,10 +75,10 @@
                   </div>
                   <div class="col-7">
                     <input
-                      type="number"
+                      type="text"
                       etiyaInput="dark"
                       formControlName="homePhone"
-                      onKeyPress="if(this.value.length==11) return false;"
+                      mask="(0000) 000-0000"
                     />
                   </div>
                 </div>
@@ -95,10 +95,10 @@
                   </div>
                   <div class="col-7">
                     <input
-                      type="number"
+                      type="text"
                       etiyaInput="dark"
                       formControlName="mobilePhone"
-                      onKeyPress="if(this.value.length==10) return false;"
+                      mask="(000) 000-0000"
                       [ngClass]="{
                         'e-invalid-input':
                           isShow &&
@@ -131,10 +131,10 @@
                   </div>
                   <div class="col-7">
                     <input
-                      type="number"
+                      type="text"
                       etiyaInput="dark"
                       formControlName="fax"
-                      onKeyPress="if(this.value.length==13) return false;"
+                      mask="(0000) 000-0000"
                     />
                   </div>
                 </div>

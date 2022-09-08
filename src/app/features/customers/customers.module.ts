@@ -1,3 +1,4 @@
+import { NgxMaskModule } from 'ngx-mask';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomersRoutingModule } from './customers-routing.module';
@@ -41,6 +42,7 @@ import { CityModule } from '../city/city.module';
     AddCustomerAddressComponent,
   ],
   imports: [
+    NgxMaskModule.forRoot(),
     CommonModule,
     CustomersRoutingModule,
     SharedModule,

@@ -45,7 +45,7 @@ export class UpdateCustContactMediumComponent implements OnInit {
       ],
       homePhone: [
         this.customer.contactMedium?.homePhone,
-        [Validators.maxLength(11), Validators.minLength(11)],
+        [Validators.maxLength(11)],
       ],
       mobilePhone: [
         this.customer.contactMedium?.mobilePhone,
@@ -55,10 +55,7 @@ export class UpdateCustContactMediumComponent implements OnInit {
           Validators.minLength(10),
         ],
       ],
-      fax: [
-        this.customer.contactMedium?.fax,
-        [Validators.maxLength(13), Validators.minLength(13)],
-      ],
+      fax: [this.customer.contactMedium?.fax, [Validators.maxLength(13)]],
     });
   }
   get f() {

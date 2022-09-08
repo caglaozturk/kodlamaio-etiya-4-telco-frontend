@@ -45,11 +45,7 @@ export class UpdateCustomerComponent implements OnInit {
       motherName: [this.customer.motherName, [Validators.maxLength(50)]],
       nationalityId: [
         this.customer.nationalityId,
-        [
-          Validators.required,
-          Validators.minLength(11),
-          Validators.maxLength(11),
-        ],
+        [Validators.pattern('^[0-9]{11}$'), Validators.required],
       ],
     });
   }
