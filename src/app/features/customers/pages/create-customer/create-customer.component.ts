@@ -5,6 +5,7 @@ import { Customer } from '../../models/customer';
 import { CustomersService } from '../../services/customer/customers.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { SearchCustomer } from '../../models/searchCustomer';
 
 @Component({
   templateUrl: './create-customer.component.html',
@@ -47,7 +48,10 @@ export class CreateCustomerComponent implements OnInit {
       ],
     });
   }
-  goNextPage() {
+  next() {
+    this.checkInvalid();
+  }
+  checkInvalid() {
     if (this.profileForm.invalid) {
       this.isShow = true;
       this.messageService.add({
@@ -58,6 +62,32 @@ export class CreateCustomerComponent implements OnInit {
       });
       return;
     }
+    this.checkTcNum(this.profileForm.value.nationalityId);
+  }
+  checkTcNum(nationalityId: number) {
+    let searchCustomer: SearchCustomer = {
+      nationalityId: nationalityId,
+      customerId: Number(''),
+      accountNumber: '',
+      gsmNumber: '',
+      firstName: '',
+      lastName: '',
+      orderNumber: Number(''),
+    };
+    this.customerService.getListByFilter(searchCustomer).subscribe((data) => {
+      if (data.length !== 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'A customer is already exist with this Nationality ID',
+          key: 'etiya-standard',
+        });
+        return;
+      }
+      this.goNextPage();
+    });
+  }
+  goNextPage() {
     this.isShow = false;
     this.customerService.setDemographicInfoToStore(this.profileForm.value);
     this.router.navigateByUrl('/dashboard/customers/list-address-info');
