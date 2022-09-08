@@ -36,6 +36,7 @@ import { StoreModule } from '@ngrx/store';
 import { sharedReducers } from './store/shared.reducers';
 import { ErrorDirective } from './directives/error.directive';
 import { StandardToastComponent } from './components/standard-toast/standard-toast.component';
+import { ValidationDialogPopupComponent } from './components/validation-dialog-popup/validation-dialog-popup.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { StandardToastComponent } from './components/standard-toast/standard-toa
     TableAccordionHeaderComponent,
     ErrorDirective,
     StandardToastComponent,
+    ValidationDialogPopupComponent,
   ],
   imports: [
     CommonModule,
@@ -104,6 +106,7 @@ import { StandardToastComponent } from './components/standard-toast/standard-toa
     TableAccordionHeaderComponent,
     ErrorDirective,
     StandardToastComponent,
+    ValidationDialogPopupComponent,
   ],
   providers: [MessageService],
 })

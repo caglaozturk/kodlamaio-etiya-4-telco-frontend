@@ -33,9 +33,12 @@ export class CustomerInfoComponent implements OnInit {
         let filteredData = this.customer.billingAccounts?.find((c) => {
           return c.status === 'active';
         });
+        this.messageService.clear();
         if (filteredData) {
           this.messageService.add({
-            key: 'etiya-warn',
+            key: 'okey',
+            sticky: true,
+            severity: 'warn',
             detail:
               'Since the customer has active products, the customer cannot be deleted.',
           });
@@ -46,6 +49,7 @@ export class CustomerInfoComponent implements OnInit {
       }
     });
   }
+
   getCustomerById() {
     this.activatedRoute.params.subscribe((params) => {
       if (params['id']) this.selectedCustomerId = params['id'];
@@ -62,7 +66,9 @@ export class CustomerInfoComponent implements OnInit {
   }
 
   getCustomerId(customer: Customer) {
-    this.router.navigateByUrl(`/update-customer/${customer.id}`);
+    this.router.navigateByUrl(
+      `/dashboard/customers/update-customer/${customer.id}`
+    );
   }
 
   removeCustomerPopup(customer: Customer) {
@@ -71,7 +77,7 @@ export class CustomerInfoComponent implements OnInit {
       key: 'c',
       sticky: true,
       severity: 'warn',
-      detail: 'Your changes could not be saved. Are you sure?',
+      detail: 'Are you sure to delete this customer?',
     });
   }
 
