@@ -88,7 +88,7 @@
 }
 .e-address-col-center {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 ::ng-deep .e-info-title {
   display: flex;
