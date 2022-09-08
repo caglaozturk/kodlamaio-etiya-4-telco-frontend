@@ -12,7 +12,7 @@
   box-sizing: border-box;
   margin-left: 60px;
   width: 1300px;
-  height: 350px;
+  height: 400px;
   margin-top: 120px;
   background: rgba(13, 43, 80, 0.7);
   border: 3px solid #f58220;
@@ -45,4 +45,13 @@
 }
 ::ng-deep .e-btn-edit:hover {
   border: 6px solid #f58220;
+}
+.e-btn-edit {
+  height: 50px;
+  width: 50px;
+}
+
+.e-btn-remove {
+  height: 50px;
+  width: 50px;
 }

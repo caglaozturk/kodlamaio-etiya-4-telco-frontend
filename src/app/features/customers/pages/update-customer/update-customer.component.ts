@@ -14,6 +14,7 @@ export class UpdateCustomerComponent implements OnInit {
   updateCustomerForm!: FormGroup;
   selectedCustomerId!: number;
   customer!: Customer;
+  isShow: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,14 +30,27 @@ export class UpdateCustomerComponent implements OnInit {
 
   createFormUpdateCustomer() {
     this.updateCustomerForm = this.formBuilder.group({
-      firstName: [this.customer.firstName, Validators.required],
-      middleName: [this.customer.middleName, Validators.required],
-      lastName: [this.customer.lastName, Validators.required],
+      firstName: [
+        this.customer.firstName,
+        [Validators.required, Validators.maxLength(50)],
+      ],
+      middleName: [this.customer.middleName, [Validators.maxLength(50)]],
+      lastName: [
+        this.customer.lastName,
+        [Validators.required, Validators.maxLength(50)],
+      ],
       birthDate: [this.customer.birthDate, Validators.required],
       gender: [this.customer.gender, Validators.required],
-      fatherName: [this.customer.fatherName, Validators.required],
-      motherName: [this.customer.motherName, Validators.required],
-      nationalityId: [this.customer.nationalityId, Validators.required],
+      fatherName: [this.customer.fatherName, [Validators.maxLength(50)]],
+      motherName: [this.customer.motherName, [Validators.maxLength(50)]],
+      nationalityId: [
+        this.customer.nationalityId,
+        [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+        ],
+      ],
     });
   }
 
@@ -59,13 +73,15 @@ export class UpdateCustomerComponent implements OnInit {
   update() {
     if (this.updateCustomerForm.invalid) {
       this.messageService.add({
-        detail: 'Please fill required areas',
+        detail: 'Enter required fields',
         severity: 'danger',
         summary: 'Error',
         key: 'etiya-custom',
       });
+      this.isShow = true;
       return;
     }
+    this.isShow = false;
     const customer: Customer = Object.assign(
       { id: this.customer.id },
       this.updateCustomerForm.value

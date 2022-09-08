@@ -27,6 +27,7 @@ export class ListAddressInfoComponent implements OnInit {
       if (data == 'reject') {
         this.messageService.clear();
       } else if (data == 'confirm') {
+        this.messageService.clear();
         this.remove();
       }
     });

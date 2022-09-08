@@ -30,45 +30,84 @@
           <div class="row">
             <div class="row d-flex justify-space-between align-items-center">
               <div class="col-6">
-                <div class="form-group">
-                  <label class="col-5" for="first-name">First Name:</label>
-                  <input
-                    class="col-7"
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="firstName"
-                  />
+                <div class="form-group row">
+                  <div class="col-5 d-flex align-content-center">
+                    <label for="first-name"
+                      >First Name<span class="e-star">*</span></label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="firstName"
+                      maxlength="50"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isShow &&
+                          updateCustomerForm.controls['firstName'].errors
+                      }"
+                    />
+                    <small
+                      *ngIf="
+                        isShow &&
+                        updateCustomerForm.controls['firstName'].errors
+                      "
+                      id="firstName-help"
+                      class="p-error block ng-invalid ng-dirty"
+                      etiyaError="error-text"
+                    >
+                      Required areas must be entered
+                    </small>
+                  </div>
                 </div>
               </div>
               <div class="col-6 form-group">
                 <div class="form-group">
-                  <label class="col-5" for="middleName">Middle Name:</label>
+                  <label class="col-5" for="middleName">Middle Name</label>
                   <input
                     class="col-7"
                     type="text "
                     etiyaInput="dark"
                     formControlName="middleName"
+                    maxlength="50"
                   />
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="form-group">
-                  <label class="col-5" for="lastName">Last Name:</label>
+                  <label class="col-5" for="lastName"
+                    >Last Name<span class="e-star">*</span></label
+                  >
                   <input
                     class="col-7"
                     type="text "
                     etiyaInput="dark"
                     formControlName="lastName"
+                    maxlength="50"
                   />
+                  <small
+                    *ngIf="
+                      isShow && updateCustomerForm.controls['lastName'].errors
+                    "
+                    id="lastName-help"
+                    class="p-error block ng-invalid ng-dirty"
+                    etiyaError="error-text"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label class="col-5" for="birthDate">Birth Name:</label>
+                  <label class="col-5" for="birthDate"
+                    >Birth Name<span class="e-star">*</span></label
+                  >
                   <input
                     class="col-7"
                     type="text"
+                    min="1900-01-01"
                     etiyaInput="dark"
                     formControlName="birthDate"
                   />
@@ -78,7 +117,9 @@
                 <div
                   class="form-group d-flex justify-content-lg-start align-items-center"
                 >
-                  <label class="col-5" for="gender">Gender:</label>
+                  <label class="col-5" for="gender"
+                    >Gender<span class="e-star">*</span></label
+                  >
                   <div class="e-dropdown col-7 p-0">
                     <select
                       name="gender"
@@ -102,6 +143,7 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="fatherName"
+                    maxlength="50"
                   />
                 </div>
               </div>
@@ -113,17 +155,21 @@
                     type="text"
                     etiyaInput="dark"
                     formControlName="motherName"
+                    maxlength="50"
                   />
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label class="col-5" for="nationalId">Nationality ID:</label>
+                  <label class="col-5" for="nationalId"
+                    >Nationality ID<span class="e-star">*</span></label
+                  >
                   <input
                     class="col-7"
-                    type="text"
+                    type="number"
                     etiyaInput="dark"
                     formControlName="nationalityId"
+                    onKeyPress="if(this.value.length==11) return false;"
                   />
                 </div>
               </div>
@@ -134,7 +180,9 @@
               <div class="col-6 d-flex justify-content-lg-start">
                 <button
                   etiyaButton="clear"
-                  routerLink="/dashboard/customers/customer-info"
+                  [routerLink]="
+                    '/dashboard/customers/customer-info/' + selectedCustomerId
+                  "
                 >
                   CANCEL
                 </button>
