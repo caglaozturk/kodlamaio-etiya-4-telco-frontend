@@ -42,10 +42,23 @@ export class ListAddressInfoComponent implements OnInit {
       key: 'c',
       sticky: true,
       severity: 'warn',
-      detail: 'Your changes could not be saved. Are you sure?',
+      detail: 'Are you sure to delete this address?',
     });
   }
   remove() {
     this.customersService.removeAdressToStore(this.addressToDelete);
+  }
+  handleConfigInput(event: any) {
+    console.warn(event.isTrusted);
+    this.customer.addresses = this.customer.addresses?.map((adr) => {
+      const newAddress = { ...adr, isMain: false };
+      return newAddress;
+    });
+    let findAddress = this.customer.addresses?.find((adr) => {
+      return adr.id == event.target.value;
+    }) as Address;
+    findAddress!.isMain = true;
+
+    this.customersService.updateAddressInfoToStore(findAddress);
   }
 }

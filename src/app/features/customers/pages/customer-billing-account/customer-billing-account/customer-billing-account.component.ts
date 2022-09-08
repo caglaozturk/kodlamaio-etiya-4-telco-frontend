@@ -23,6 +23,7 @@ export class CustomerBillingAccountComponent implements OnInit {
   billingAccount!: BillingAccount;
 
   billingAdress: Address[] = [];
+  addresses!: Address;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,6 +37,7 @@ export class CustomerBillingAccountComponent implements OnInit {
   ngOnInit(): void {
     this.getParams();
     this.getCityList();
+    this.getMainAddress();
   }
 
   getParams() {
@@ -126,5 +128,28 @@ export class CustomerBillingAccountComponent implements OnInit {
           });
         },
       });
+  }
+  getMainAddress() {
+    this.customerService
+      .getCustomerById(this.selectedCustomerId)
+      .subscribe((data) => {
+        console.warn(data);
+        data.addresses?.forEach((adr) => {
+          if (adr.isMain == true) this.addresses = adr;
+        });
+      });
+  }
+  handleConfigInput(event: any) {
+    this.customer.addresses = this.customer.addresses?.map((adr) => {
+      const newAddress = { ...adr, isMain: false };
+      return newAddress;
+    });
+    let findAddress = this.customer.addresses?.find((adr) => {
+      return adr.id == event.target.value;
+    });
+    findAddress!.isMain = true;
+    this.customerService.update(this.customer).subscribe((data) => {
+      console.log(data);
+    });
   }
 }

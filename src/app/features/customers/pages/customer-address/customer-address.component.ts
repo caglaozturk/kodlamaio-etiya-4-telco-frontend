@@ -14,6 +14,7 @@ export class CustomerAddressComponent implements OnInit {
   customerAddress: Address[] = [];
   addressToDelete!: Address;
   customer!: Customer;
+  isChecked!: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,6 +32,30 @@ export class CustomerAddressComponent implements OnInit {
         this.messageService.clear();
         this.remove();
       }
+    });
+  }
+
+  removeAddress(adr: Address) {
+    this.customerService.deleteAddress(this.selectedCustomerId);
+
+    this.customerService.delete(adr.id).subscribe((data) => {
+      setTimeout(() => {
+        location.reload();
+      }, 5000);
+    });
+  }
+
+  handleConfigInput(event: any) {
+    this.customer.addresses = this.customer.addresses?.map((adr) => {
+      const newAddress = { ...adr, isMain: false };
+      return newAddress;
+    });
+    let findAddress = this.customer.addresses?.find((adr) => {
+      return adr.id == event.target.value;
+    });
+    findAddress!.isMain = true;
+    this.customerService.update(this.customer).subscribe((data) => {
+      console.log(data);
     });
   }
 
