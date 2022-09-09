@@ -40,13 +40,16 @@ export class AddContactMediumComponent implements OnInit {
       ],
       homePhone: [
         this.customer.contactMedium?.homePhone,
-        [Validators.maxLength(11)],
+        Validators.pattern('^[0-9]{11}$'),
       ],
       mobilePhone: [
         this.customer.contactMedium?.mobilePhone,
-        [Validators.required, Validators.maxLength(10)],
+        [Validators.pattern('^[0-9]{10}$'), Validators.required],
       ],
-      fax: [this.customer.contactMedium?.fax, [Validators.maxLength(13)]],
+      fax: [
+        this.customer.contactMedium?.fax,
+        Validators.pattern('^[0-9]{13}$'),
+      ],
     });
   }
 
@@ -65,6 +68,12 @@ export class AddContactMediumComponent implements OnInit {
 
   saveCustomer() {
     if (this.contactForm.invalid) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'The information you entered is incorrect. Please try again',
+        key: 'etiya-standard',
+      });
       this.isShow = true;
       return;
     }
