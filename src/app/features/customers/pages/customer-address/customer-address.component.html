@@ -54,10 +54,7 @@
                       id="flexRadioDefault1"
                       (change)="handleConfigInput($event)"
                       value="{{ adr.id }}"
-                      [checked]="
-                        this.customer.addresses &&
-                        this.customer.addresses.length <= 1
-                      "
+                      [checked]="adr.isMain"
                       [disabled]="
                         this.customer.addresses &&
                         this.customer.addresses.length <= 1
@@ -82,9 +79,7 @@
                 <button
                   (click)="removePopup(adr)"
                   etiyaButton="remove"
-                  [disabled]="
-                    this.customerAddress && this.customerAddress.length <= 1
-                  "
+                  [disabled]="adr.isMain"
                 ></button>
               </td>
             </tr>

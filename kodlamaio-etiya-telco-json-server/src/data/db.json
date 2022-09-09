@@ -21,17 +21,19 @@
           },
           "street": "Granby",
           "flatNumber": 6,
-          "description": "6128 Jay Alley"
+          "description": "6128 Jay Alley",
+          "isMain": false
         },
         {
-          "id": 2,
           "city": {
-            "id": 1,
-            "name": "New York"
+            "id": 4,
+            "name": "Houston"
           },
           "street": "Oak Valley",
-          "flatNumber": 18,
-          "description": "68 Hudson Street"
+          "flatNumber": 55,
+          "description": "68 Hudson Street",
+          "id": 2,
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -219,7 +221,8 @@
           },
           "street": "Ilene",
           "flatNumber": 8,
-          "description": "233 Trailsway Park"
+          "description": "233 Trailsway Park",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -452,7 +455,8 @@
           },
           "street": "Waxwing",
           "flatNumber": 16,
-          "description": "4 Golden Leaf Place"
+          "description": "4 Golden Leaf Place",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -484,7 +488,8 @@
           },
           "street": "Vera",
           "flatNumber": 5,
-          "description": "2792 Autumn Leaf Avenue"
+          "description": "2792 Autumn Leaf Avenue",
+          "isMain": true
         },
         {
           "id": 2,
@@ -494,7 +499,8 @@
           },
           "street": "Mcguire",
           "flatNumber": 18,
-          "description": "03957 Sloan Trail"
+          "description": "03957 Sloan Trail",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -581,7 +587,8 @@
           },
           "street": "Killdeer",
           "flatNumber": 3,
-          "description": "7 Badeau Pass"
+          "description": "7 Badeau Pass",
+          "isMain": true
         },
         {
           "id": 2,
@@ -591,7 +598,8 @@
           },
           "street": "Melrose",
           "flatNumber": 9,
-          "description": "751 Stoughton Place"
+          "description": "751 Stoughton Place",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -745,7 +753,8 @@
           },
           "street": "Fieldstone",
           "flatNumber": 11,
-          "description": "7 Brown Hill"
+          "description": "7 Brown Hill",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -827,7 +836,8 @@
           },
           "street": "Schurz",
           "flatNumber": 11,
-          "description": "671 Di Loreto Point"
+          "description": "671 Di Loreto Point",
+          "isMain": true
         },
         {
           "id": 2,
@@ -837,7 +847,8 @@
           },
           "street": "Northview",
           "flatNumber": 6,
-          "description": "8 Mosinee Place"
+          "description": "8 Mosinee Place",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -968,7 +979,8 @@
           },
           "street": "School",
           "flatNumber": 18,
-          "description": "92590 Hayes Way"
+          "description": "92590 Hayes Way",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -1118,7 +1130,8 @@
           },
           "street": "Mariners Cove",
           "flatNumber": 12,
-          "description": "302 Cascade Avenue"
+          "description": "302 Cascade Avenue",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -1298,7 +1311,8 @@
           },
           "street": "Mesta",
           "flatNumber": 17,
-          "description": "8 Old Shore Trail"
+          "description": "8 Old Shore Trail",
+          "isMain": true
         },
         {
           "id": 2,
@@ -1308,7 +1322,8 @@
           },
           "street": "Bartelt",
           "flatNumber": 15,
-          "description": "78 International Junction"
+          "description": "78 International Junction",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -1488,7 +1503,8 @@
           },
           "street": "Melvin",
           "flatNumber": 14,
-          "description": "320 Welch Place"
+          "description": "320 Welch Place",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -1540,7 +1556,8 @@
           },
           "street": "Oriole",
           "flatNumber": 1,
-          "description": "785 Shelley Point"
+          "description": "785 Shelley Point",
+          "isMain": true
         },
         {
           "id": 2,
@@ -1550,7 +1567,8 @@
           },
           "street": "Hagan",
           "flatNumber": 2,
-          "description": "43 Sunnyside Crossing"
+          "description": "43 Sunnyside Crossing",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -1637,7 +1655,8 @@
           },
           "street": "Fordem",
           "flatNumber": 15,
-          "description": "3 Mariners Cove Place"
+          "description": "3 Mariners Cove Place",
+          "isMain": true
         },
         {
           "id": 2,
@@ -1647,7 +1666,8 @@
           },
           "street": "Hagan",
           "flatNumber": 8,
-          "description": "44 Cherokee Drive"
+          "description": "44 Cherokee Drive",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -1699,7 +1719,8 @@
           },
           "street": "Talmadge",
           "flatNumber": 13,
-          "description": "59 Lakeland Circle"
+          "description": "59 Lakeland Circle",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -1731,7 +1752,8 @@
           },
           "street": "Mayer",
           "flatNumber": 3,
-          "description": "66793 Vahlen Circle"
+          "description": "66793 Vahlen Circle",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -1818,7 +1840,8 @@
           },
           "street": "Hudson",
           "flatNumber": 4,
-          "description": "2 Shoshone Hill"
+          "description": "2 Shoshone Hill",
+          "isMain": true
         },
         {
           "id": 2,
@@ -1828,7 +1851,8 @@
           },
           "street": "Moose",
           "flatNumber": 17,
-          "description": "485 Dixon Junction"
+          "description": "485 Dixon Junction",
+          "isMain": false
         }
       ],
       "contactMedium": {
@@ -2023,7 +2047,8 @@
           },
           "street": "Delaware",
           "flatNumber": 14,
-          "description": "25 Blaine Circle"
+          "description": "25 Blaine Circle",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -2164,7 +2189,8 @@
           },
           "street": "2nd",
           "flatNumber": 16,
-          "description": "6313 Dwight Plaza"
+          "description": "6313 Dwight Plaza",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -2359,7 +2385,8 @@
           },
           "street": "Gateway",
           "flatNumber": 19,
-          "description": "8 Tony Point"
+          "description": "8 Tony Point",
+          "isMain": true
         }
       ],
       "contactMedium": {
@@ -2446,7 +2473,8 @@
           },
           "street": "Laurel",
           "flatNumber": 4,
-          "description": "8 6th Junction"
+          "description": "8 6th Junction",
+          "isMain": true
         }
       ],
       "contactMedium": {
