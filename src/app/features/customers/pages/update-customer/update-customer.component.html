@@ -131,6 +131,8 @@
                       min="1900-01-01"
                       etiyaInput="dark"
                       formControlName="birthDate"
+                      [max]="today | date: 'yyyy-MM-dd'"
+                      (blur)="onDateChange($event)"
                       [ngClass]="{
                         'e-invalid-input':
                           isShow &&
@@ -140,13 +142,20 @@
                     <small
                       *ngIf="
                         isShow &&
-                        updateCustomerForm.controls['birthDate'].errors
+                        updateCustomerForm.controls['birthDate'].errors &&
+                        !futureDate
                       "
-                      id="birthDate-help"
                       class="p-error block ng-invalid ng-dirty"
                       etiyaError="error-text"
                     >
                       Required areas must be entered
+                    </small>
+                    <small
+                      *ngIf="futureDate"
+                      class="p-error block ng-invalid ng-dirty"
+                      etiyaError="error-text"
+                    >
+                      Please enter a valid date of birth
                     </small>
                   </div>
                 </div>

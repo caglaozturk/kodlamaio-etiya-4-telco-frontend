@@ -49,3 +49,12 @@
   color: #f58220;
   font-weight: 900;
 }
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+.e-city-name {
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+}
