@@ -6,6 +6,7 @@ import { CustomersService } from '../../services/customer/customers.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SearchCustomer } from '../../models/searchCustomer';
+import { formatDate } from '@angular/common';
 
 @Component({
   templateUrl: './create-customer.component.html',
@@ -16,6 +17,8 @@ export class CreateCustomerComponent implements OnInit {
   createCustomerModel$!: Observable<Customer>;
   customer!: Customer;
   isShow: Boolean = false;
+  today: Date = new Date();
+  futureDate: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,14 +37,27 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   createFormAddCustomer() {
+    let bDate = new Date();
+    if (this.customer.birthDate) {
+      bDate = new Date(this.customer.birthDate);
+    }
     this.profileForm = this.formBuilder.group({
-      firstName: [this.customer.firstName, Validators.required],
-      middleName: [this.customer.middleName],
-      lastName: [this.customer.lastName, Validators.required],
-      birthDate: [this.customer.birthDate, Validators.required],
-      gender: [this.customer.gender ?? '', Validators.required],
-      fatherName: [this.customer.fatherName],
-      motherName: [this.customer.motherName],
+      firstName: [
+        this.customer.firstName,
+        [Validators.required, Validators.maxLength(50)],
+      ],
+      middleName: [this.customer.middleName, [Validators.maxLength(50)]],
+      lastName: [
+        this.customer.lastName,
+        [Validators.required, Validators.maxLength(50)],
+      ],
+      birthDate: [
+        formatDate(new Date(bDate), 'yyyy-MM-dd', 'en'),
+        Validators.required,
+      ],
+      gender: [this.customer.gender, Validators.required],
+      fatherName: [this.customer.fatherName, [Validators.maxLength(50)]],
+      motherName: [this.customer.motherName, [Validators.maxLength(50)]],
       nationalityId: [
         this.customer.nationalityId,
         [Validators.pattern('^[0-9]{11}$'), Validators.required],
@@ -91,5 +107,14 @@ export class CreateCustomerComponent implements OnInit {
     this.isShow = false;
     this.customerService.setDemographicInfoToStore(this.profileForm.value);
     this.router.navigateByUrl('/dashboard/customers/list-address-info');
+  }
+  onDateChange(event: any) {
+    let date = new Date(event.target.value);
+    if (date.getFullYear() > this.today.getFullYear()) {
+      this.profileForm.get('birthDate')?.setValue('');
+      this.futureDate = true;
+    } else {
+      this.futureDate = false;
+    }
   }
 }
