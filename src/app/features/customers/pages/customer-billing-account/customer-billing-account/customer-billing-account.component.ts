@@ -24,6 +24,7 @@ export class CustomerBillingAccountComponent implements OnInit {
 
   billingAdress: Address[] = [];
   addresses!: Address;
+  mainAddres!: number;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,6 +39,8 @@ export class CustomerBillingAccountComponent implements OnInit {
     this.getParams();
     this.getCityList();
     this.getMainAddress();
+    this.createAddressForm();
+    this.createAccountForm();
   }
 
   getParams() {
@@ -55,8 +58,6 @@ export class CustomerBillingAccountComponent implements OnInit {
         .getCustomerById(this.selectedCustomerId)
         .subscribe((data) => {
           this.customer = data;
-          this.createAddressForm();
-          this.createAccountForm();
         });
     }
   }
@@ -89,12 +90,17 @@ export class CustomerBillingAccountComponent implements OnInit {
     });
   }
 
+  isMainAdd() {
+    return this.addresses == undefined ? true : false;
+  }
+
   addAddress() {
     const addressToAdd: Address = {
       ...this.addressForm.value,
       city: this.cityList.find(
         (city) => city.id == this.addressForm.value.city.id
       ),
+      isMain: this.isMainAdd(),
     };
     this.billingAdress.push(addressToAdd);
     console.log(this.billingAdress);
@@ -102,11 +108,14 @@ export class CustomerBillingAccountComponent implements OnInit {
   }
 
   add() {
-    this.billingAccount = this.accountForm.value;
-    this.billingAccount.addresses = this.billingAdress;
-    console.log(this.billingAccount);
+    //this.billingAccount = this.accountForm.value;
+    //this.billingAccount.addresses = this.billingAdress;
+    let newBillingAccount: BillingAccount = {
+      ...this.accountForm.value,
+      addresses: [...this.billingAdress, this.addresses],
+    };
     this.customerService
-      .addBillingAccount(this.billingAccount, this.customer)
+      .addBillingAccount(newBillingAccount, this.customer)
       .subscribe({
         next: () => {
           this.messageService.add({
@@ -134,23 +143,28 @@ export class CustomerBillingAccountComponent implements OnInit {
       .getCustomerById(this.selectedCustomerId)
       .subscribe((data) => {
         data.addresses?.forEach((adr) => {
-          if (adr.isMain == true) {
-            this.addresses = adr;
-          }
+          if (adr.isMain == true) this.addresses = adr;
         });
       });
   }
   handleConfigInput(event: any) {
-    this.customer.addresses = this.customer.addresses?.map((adr) => {
-      const newAddress = { ...adr, isMain: false };
-      return newAddress;
-    });
-    let findAddress = this.customer.addresses?.find((adr) => {
+    this.mainAddres = event.target.value;
+    //this.add(event.target.value)
+    this.billingAccount.addresses = this.billingAccount.addresses?.map(
+      (adr) => {
+        const newAddress = { ...adr, isMain: false };
+        return newAddress;
+      }
+    );
+
+    let findAddressBill = this.billingAccount.addresses.find((adr) => {
       return adr.id == event.target.value;
     });
-    findAddress!.isMain = true;
+
+    findAddressBill!.isMain = true;
     this.customerService.update(this.customer).subscribe((data) => {
       console.log(data);
+      this.getCustomerById();
     });
   }
 }

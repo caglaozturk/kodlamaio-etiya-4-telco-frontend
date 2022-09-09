@@ -71,7 +71,8 @@
                 <tbody class="table-body">
                   <tr
                     *ngIf="
-                      !billingAdress || billingAdress.length == 0;
+                      (!billingAdress || billingAdress.length == 0) &&
+                        addresses;
                       else customerAddressList
                     "
                   >
@@ -84,10 +85,8 @@
                             name="flexRadioDefault"
                             id="flexRadioDefault1"
                             (change)="handleConfigInput($event)"
-                            value="{{ addresses.id }}"
-                            [checked]="
-                              billingAdress && billingAdress.length <= 1
-                            "
+                            [value]="addresses.id"
+                            [checked]="addresses.isMain"
                             [disabled]="addresses.isMain == true"
                           />
                           <label
@@ -107,7 +106,7 @@
                   </tr>
 
                   <ng-template #customerAddressList>
-                    <tr>
+                    <tr *ngIf="addresses">
                       <th>
                         <div class="row">
                           <div class="col-2 d-flex justify-content-end">
@@ -117,10 +116,8 @@
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                               (change)="handleConfigInput($event)"
-                              value="{{ addresses.id }}"
-                              [checked]="
-                                billingAdress && billingAdress.length >= 1
-                              "
+                              [value]="addresses.id"
+                              [checked]="addresses.isMain"
                             />
                             <label
                               class="form-check-label"
@@ -151,6 +148,7 @@
                             id="flexRadioDefault1"
                             (change)="handleConfigInput($event)"
                             value="{{ billingadr.id }}"
+                            [checked]="billingadr.isMain"
                           />
                           <label
                             class="form-check-label"
@@ -193,7 +191,7 @@
             <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
               <button
                 etiyaButton="clear"
-                [disabled]="accountForm.invalid"
+                [disabled]="!accountForm.valid && addresses"
                 (click)="add()"
               >
                 Create
@@ -282,7 +280,7 @@
             <div class="col-2">
               <button
                 etiyaButton="clear"
-                [disabled]="addressForm.invalid"
+                [disabled]="!addressForm.valid"
                 (click)="addAddress()"
               >
                 SAVE
