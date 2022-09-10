@@ -17,11 +17,12 @@ export class CustomerBillingAccountComponent implements OnInit {
   accountForm!: FormGroup;
   addressForm!: FormGroup;
   isShown: boolean = false;
+  isValid: boolean = false;
+  isEmpty: boolean = false;
   cityList!: City[];
   selectedCustomerId!: number;
   customer!: Customer;
   billingAccount!: BillingAccount;
-
   billingAdress: Address[] = [];
   addresses!: Address;
   mainAddres!: number;
@@ -95,48 +96,60 @@ export class CustomerBillingAccountComponent implements OnInit {
   }
 
   addAddress() {
-    const addressToAdd: Address = {
-      ...this.addressForm.value,
-      city: this.cityList.find(
-        (city) => city.id == this.addressForm.value.city.id
-      ),
-      isMain: this.isMainAdd(),
-    };
-    this.billingAdress.push(addressToAdd);
-    console.log(this.billingAdress);
-    this.isShown = false;
+    if (this.addressForm.valid) {
+      this.isValid = false;
+      const addressToAdd: Address = {
+        ...this.addressForm.value,
+        city: this.cityList.find(
+          (city) => city.id == this.addressForm.value.city.id
+        ),
+        isMain: this.isMainAdd(),
+      };
+      this.billingAdress.push(addressToAdd);
+      console.log(this.billingAdress);
+      this.isShown = false;
+    } else {
+      this.isValid = true;
+      this.isEmpty = false;
+    }
   }
 
   add() {
-    //this.billingAccount = this.accountForm.value;
-    //this.billingAccount.addresses = this.billingAdress;
-    let newBillingAccount: BillingAccount = {
-      ...this.accountForm.value,
-      addresses: [...this.billingAdress, this.addresses],
-    };
-    this.customerService
-      .addBillingAccount(newBillingAccount, this.customer)
-      .subscribe({
-        next: () => {
-          this.messageService.add({
-            detail: 'Sucsessfully added',
-            severity: 'success',
-            summary: 'Add',
-            key: 'etiya-custom',
-          });
-          this.router.navigateByUrl(
-            `/dashboard/customers/customer-billing-account-detail/${this.selectedCustomerId}`
-          );
-        },
-        error: (err) => {
-          this.messageService.add({
-            detail: 'Error created',
-            severity: 'danger',
-            summary: 'Error',
-            key: 'etiya-custom',
-          });
-        },
-      });
+    if (this.accountForm.valid) {
+      this.isEmpty = false;
+      //this.billingAccount = this.accountForm.value;
+      //this.billingAccount.addresses = this.billingAdress;
+      let newBillingAccount: BillingAccount = {
+        ...this.accountForm.value,
+        addresses: [...this.billingAdress, this.addresses],
+      };
+      this.customerService
+        .addBillingAccount(newBillingAccount, this.customer)
+        .subscribe({
+          next: () => {
+            this.messageService.add({
+              detail: 'Sucsessfully added',
+              severity: 'success',
+              summary: 'Add',
+              key: 'etiya-custom',
+            });
+            this.router.navigateByUrl(
+              `/dashboard/customers/customer-billing-account-detail/${this.selectedCustomerId}`
+            );
+          },
+          error: (err) => {
+            this.messageService.add({
+              detail: 'Error created',
+              severity: 'danger',
+              summary: 'Error',
+              key: 'etiya-custom',
+            });
+          },
+        });
+    } else {
+      this.isEmpty = true;
+      this.isValid = false;
+    }
   }
   getMainAddress() {
     this.customerService

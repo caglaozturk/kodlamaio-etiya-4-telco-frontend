@@ -28,8 +28,19 @@
                   type="text-area"
                   etiyaInput="dark"
                   formControlName="accountName"
+                  [ngClass]="{
+                    'e-invalid-input':
+                      isEmpty && accountForm.controls['accountName'].errors
+                  }"
                 />
               </div>
+              <small
+                *ngIf="isEmpty && accountForm.controls['accountName'].errors"
+                class="p-error block ng-invalid ng-dirty"
+                style="color: red; margin-left: 487px"
+              >
+                Required areas must be entered
+              </small>
             </div>
           </div>
           <div class="col-12 mb-5">
@@ -46,8 +57,22 @@
                   class="e-address-desc"
                   placeholder=""
                   formControlName="accountDescription"
+                  [ngClass]="{
+                    'e-invalid-input':
+                      isEmpty &&
+                      accountForm.controls['accountDescription'].errors
+                  }"
                 ></textarea>
               </div>
+              <small
+                *ngIf="
+                  isEmpty && accountForm.controls['accountDescription'].errors
+                "
+                class="p-error block ng-invalid ng-dirty"
+                style="color: red"
+              >
+                Required areas must be entered
+              </small>
             </div>
           </div>
         </div>
@@ -189,105 +214,151 @@
               </button>
             </div>
             <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
-              <button
-                etiyaButton="clear"
-                [disabled]="!accountForm.valid && addresses"
-                (click)="add()"
-              >
-                Create
-              </button>
+              <button etiyaButton="clear" (click)="add()">Create</button>
             </div>
           </div>
         </div>
       </div>
       <div *ngIf="isShown == true">
-        <form *ngIf="addressForm" [formGroup]="addressForm">
+        <div class="e-bill-form-container">
           <div class="row">
-            <div class="col-12 col-xl-5">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="city">City<span class="e-star">*</span> </label>
-                </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <div class="e-dropdown">
-                    <select
-                      etiyaInput="dark"
-                      name="gender"
-                      id="gender"
-                      formControlName="city"
+            <a class="e-form-close" (click)="isShown = false">X</a>
+          </div>
+          <form *ngIf="addressForm" [formGroup]="addressForm">
+            <div class="row">
+              <div class="col-12 col-xl-5">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="city">City<span class="e-star">*</span> </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <div class="e-dropdown">
+                      <select
+                        etiyaInput="dark"
+                        name="gender"
+                        id="gender"
+                        formControlName="city"
+                        [ngClass]="{
+                          'e-invalid-input':
+                            isValid && addressForm.controls['city'].errors
+                        }"
+                      >
+                        <option selected disabled hidden value="">
+                          Choose a city
+                        </option>
+                        <option *ngFor="let city of cityList" [ngValue]="city">
+                          {{ city.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <small
+                      *ngIf="isValid && addressForm.controls['city'].errors"
+                      class="p-error block ng-invalid ng-dirty"
+                      style="color: red"
                     >
-                      <option selected disabled hidden value="">
-                        Choose a city
-                      </option>
-                      <option *ngFor="let city of cityList" [ngValue]="city">
-                        {{ city.name }}
-                      </option>
-                    </select>
+                      Required areas must be entered
+                    </small>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-xl-7">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="flatNumber"
-                    >House/Flat Number<span class="e-star">*</span>
-                  </label>
+              <div class="col-12 col-xl-7">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="flatNumber"
+                      >House/Flat Number<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="flatNumber"
+                      maxlength="20"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isValid && addressForm.controls['flatNumber'].errors
+                      }"
+                    />
+                  </div>
+                  <small
+                    *ngIf="isValid && addressForm.controls['flatNumber'].errors"
+                    class="p-error block ng-invalid ng-dirty"
+                    style="color: red; margin-left: 288px"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <input
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="flatNumber"
-                  />
+              </div>
+              <div class="col-12 col-xl-5">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="street"
+                      >Street<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="street"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isValid && addressForm.controls['street'].errors
+                      }"
+                    />
+                  </div>
+                  <small
+                    *ngIf="isValid && addressForm.controls['street'].errors"
+                    class="p-error block ng-invalid ng-dirty"
+                    style="color: red; margin-left: 203px"
+                  >
+                    Required areas must be entered
+                  </small>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row mb-1">
+                  <div class="col-12 e-address-col-center">
+                    <label for="address-description"
+                      >Address Description<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 e-address-col-center">
+                    <textarea
+                      class="e-address-desc"
+                      placeholder=""
+                      formControlName="description"
+                      [ngClass]="{
+                        'e-invalid-input':
+                          isValid && addressForm.controls['description'].errors
+                      }"
+                    ></textarea>
+                  </div>
+                  <small
+                    *ngIf="
+                      isValid && addressForm.controls['description'].errors
+                    "
+                    class="p-error block ng-invalid ng-dirty"
+                    style="color: red"
+                  >
+                    Required areas must be entered
+                  </small>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-xl-5">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="street"
-                    >Street<span class="e-star">*</span>
-                  </label>
-                </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <input
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="street"
-                  />
-                </div>
+            <div class="row mt-2 d-flex justify-content-center">
+              <div class="col-2">
+                <button
+                  etiyaButton="clear"
+                  [disabled]="!addressForm.valid"
+                  (click)="addAddress()"
+                >
+                  SAVE
+                </button>
               </div>
             </div>
-            <div class="col-12">
-              <div class="row mb-1">
-                <div class="col-12 e-address-col-center">
-                  <label for="address-description"
-                    >Address Description<span class="e-star">*</span>
-                  </label>
-                </div>
-                <div class="col-12 e-address-col-center">
-                  <textarea
-                    class="e-address-desc"
-                    placeholder=""
-                    formControlName="description"
-                  ></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2 d-flex justify-content-center">
-            <div class="col-2">
-              <button
-                etiyaButton="clear"
-                [disabled]="!addressForm.valid"
-                (click)="addAddress()"
-              >
-                SAVE
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </app-main-layout>

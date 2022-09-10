@@ -67,10 +67,10 @@
                   </div>
                   <div class="col-12 col-lg-8 e-address-col-center flex-column">
                     <input
-                      type="number"
+                      type="text"
                       etiyaInput="dark"
                       formControlName="flatNumber"
-                      onKeyPress="if(this.value.length==20) return false;"
+                      maxlength="20"
                       [ngClass]="{
                         'e-invalid-input':
                           isShow && addressForm.controls['flatNumber'].errors
