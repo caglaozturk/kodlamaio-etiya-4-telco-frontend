@@ -70,7 +70,7 @@ export class AddCustomerAddressComponent implements OnInit {
 
   createAddressForm() {
     this.addressForm = this.formBuilder.group({
-      city: [this.addressToUpdate?.city.id || 0, Validators.required],
+      city: [this.addressToUpdate?.city.id || '', Validators.required],
       street: [this.addressToUpdate?.street || '', Validators.required],
       flatNumber: [this.addressToUpdate?.flatNumber || '', Validators.required],
       description: [
