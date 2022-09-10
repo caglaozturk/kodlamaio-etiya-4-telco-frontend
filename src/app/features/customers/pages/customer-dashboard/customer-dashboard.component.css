@@ -20,7 +20,9 @@
 
 ::ng-deep .table.e-table .table-body tr th a {
   cursor: pointer;
+  color: #f58220;
+  border-bottom: 2px solid #f58220;
 }
-::ng-deep .table.e-table .table-body tr th a:hover {
-  border-bottom: 2px solid white;
+.table-title th:first-child {
+  color: #f58220 !important;
 }
