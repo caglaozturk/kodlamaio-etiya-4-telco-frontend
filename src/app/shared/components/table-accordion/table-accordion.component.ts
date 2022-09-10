@@ -29,7 +29,10 @@ export class TableAccordionComponent implements OnInit {
       if (data == 'reject') {
         this.messageService.clear();
       } else if (data == 'confirm') {
-        if (this.billingAccountToDelete.orders.length > 0) {
+        if (
+          this.billingAccountToDelete.orders &&
+          this.billingAccountToDelete.orders.length > 0
+        ) {
           this.messageService.clear();
           this.messageService.add({
             key: 'offer',
