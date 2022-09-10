@@ -37,6 +37,7 @@ import { sharedReducers } from './store/shared.reducers';
 import { ErrorDirective } from './directives/error.directive';
 import { StandardToastComponent } from './components/standard-toast/standard-toast.component';
 import { ValidationDialogPopupComponent } from './components/validation-dialog-popup/validation-dialog-popup.component';
+import { OfferPopupComponent } from './components/offer-popup/offer-popup.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ValidationDialogPopupComponent } from './components/validation-dialog-p
     ErrorDirective,
     StandardToastComponent,
     ValidationDialogPopupComponent,
+    OfferPopupComponent,
   ],
   imports: [
     CommonModule,
@@ -107,6 +109,7 @@ import { ValidationDialogPopupComponent } from './components/validation-dialog-p
     ErrorDirective,
     StandardToastComponent,
     ValidationDialogPopupComponent,
+    OfferPopupComponent,
   ],
   providers: [MessageService],
 })
