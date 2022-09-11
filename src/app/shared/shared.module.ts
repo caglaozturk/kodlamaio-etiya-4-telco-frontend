@@ -38,6 +38,7 @@ import { ErrorDirective } from './directives/error.directive';
 import { StandardToastComponent } from './components/standard-toast/standard-toast.component';
 import { ValidationDialogPopupComponent } from './components/validation-dialog-popup/validation-dialog-popup.component';
 import { OfferPopupComponent } from './components/offer-popup/offer-popup.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { OfferPopupComponent } from './components/offer-popup/offer-popup.compon
     OfferPopupComponent,
   ],
   imports: [
+    NgxMaskModule.forRoot(),
     CommonModule,
     ToastModule,
     ButtonModule,

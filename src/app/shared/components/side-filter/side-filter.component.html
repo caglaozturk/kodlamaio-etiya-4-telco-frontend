@@ -41,11 +41,10 @@
 
       <label class="e-label">GSM Number</label>
       <input
-        type="number"
+        type="text"
         etiyaInput="dark"
         formControlName="gsmNumber"
-        (keypress)="isNumberId($event)"
-        onKeyPress="if(this.value.length==10) return false;"
+        mask="(000) 000-0000"
         #gsmNumber
       />
 
