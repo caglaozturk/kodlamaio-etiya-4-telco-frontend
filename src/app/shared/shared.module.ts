@@ -39,6 +39,7 @@ import { StandardToastComponent } from './components/standard-toast/standard-toa
 import { ValidationDialogPopupComponent } from './components/validation-dialog-popup/validation-dialog-popup.component';
 import { OfferPopupComponent } from './components/offer-popup/offer-popup.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { OfferDetailPopUpComponent } from './components/offer-detail-pop-up/offer-detail-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { NgxMaskModule } from 'ngx-mask';
     StandardToastComponent,
     ValidationDialogPopupComponent,
     OfferPopupComponent,
+    OfferDetailPopUpComponent,
   ],
   imports: [
     NgxMaskModule.forRoot(),
@@ -112,6 +114,7 @@ import { NgxMaskModule } from 'ngx-mask';
     StandardToastComponent,
     ValidationDialogPopupComponent,
     OfferPopupComponent,
+    OfferDetailPopUpComponent,
   ],
   providers: [MessageService],
 })
