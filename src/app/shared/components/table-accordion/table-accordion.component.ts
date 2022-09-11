@@ -38,7 +38,7 @@ export class TableAccordionComponent implements OnInit {
             key: 'offer',
             severity: 'warn',
             detail:
-              'There is a product belonging to the account, this account cannot be deleted',
+              'The billing account that you want to delete has an active product(s). You can not delete it!',
           });
           setTimeout(() => {
             this.messageService.clear();
@@ -122,7 +122,7 @@ export class TableAccordionComponent implements OnInit {
       key: 'c',
       sticky: true,
       severity: 'warn',
-      detail: 'Are you sure you want to delete?',
+      detail: 'Are you sure to delete this billing account?',
     });
   }
 
