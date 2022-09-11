@@ -110,6 +110,12 @@ export class TableAccordionComponent implements OnInit {
     }
   }
 
+  updateBillingAccount(billingAccount: BillingAccount) {
+    this.router.navigateByUrl(
+      `/dashboard/customers/${this.customerId}/customer-bill/update/${billingAccount.id}`
+    );
+  }
+
   removePopup(billinAccount: BillingAccount) {
     this.billingAccountToDelete = billinAccount;
     this.messageService.add({

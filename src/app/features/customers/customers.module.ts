@@ -21,6 +21,7 @@ import { CustomerContactMediumComponent } from './pages/customer-contact-medium/
 import { OfferSelectionComponent } from './pages/offer-selection/offer-selection.component';
 import { AddCustomerAddressComponent } from './pages/add-customer-address/add-customer-address.component';
 import { CityModule } from '../city/city.module';
+import { CustomerBillingAccountUpdateComponent } from './pages/customer-billing-account-update/customer-billing-account-update.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CityModule } from '../city/city.module';
     CustomerContactMediumComponent,
     OfferSelectionComponent,
     AddCustomerAddressComponent,
+    CustomerBillingAccountUpdateComponent,
   ],
   imports: [
     NgxMaskModule.forRoot(),

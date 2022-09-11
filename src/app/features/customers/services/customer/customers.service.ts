@@ -38,6 +38,28 @@ export class CustomersService {
     return this.httpClient.get<Customer[]>(this.apiControllerUrl);
   }
 
+  updateBillingAccount(
+    billingAccountToUpdate: BillingAccount,
+    customer: Customer
+  ): Observable<Customer> {
+    console.log(billingAccountToUpdate.id);
+    const newCustomer: Customer = {
+      ...customer,
+    };
+    const newBillingAccount = customer.billingAccounts?.findIndex(
+      (billing) => billing.id === billingAccountToUpdate.id
+    ) as number;
+    if (newCustomer.billingAccounts) {
+      console.log(billingAccountToUpdate);
+      newCustomer.billingAccounts![newBillingAccount] = billingAccountToUpdate;
+    }
+
+    return this.httpClient.put<Customer>(
+      `${this.apiControllerUrl}/${customer.id}`,
+      newCustomer
+    );
+  }
+
   getListByFilter(searchCustomer: SearchCustomer): Observable<Customer[]> {
     const subject = new Subject<Customer[]>();
     this.httpClient.get<Customer[]>(this.apiControllerUrl).subscribe({
