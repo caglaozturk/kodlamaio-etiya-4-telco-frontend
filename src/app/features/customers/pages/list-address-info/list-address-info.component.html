@@ -49,10 +49,7 @@
                           id="flexRadioDefault1"
                           (change)="handleConfigInput($event)"
                           value="{{ address.id }}"
-                          [checked]="
-                            this.customer.addresses &&
-                            this.customer.addresses.length <= 1
-                          "
+                          [checked]="address.isMain"
                         />
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
@@ -73,10 +70,6 @@
                     <button
                       (click)="removePopup(address)"
                       etiyaButton="remove"
-                      [disabled]="
-                        this.customer.addresses &&
-                        this.customer.addresses.length <= 1
-                      "
                     ></button>
                   </td>
                 </tr>

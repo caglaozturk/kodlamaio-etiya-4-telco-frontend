@@ -38,18 +38,34 @@ export class ListAddressInfoComponent implements OnInit {
   }
   removePopup(address: Address) {
     this.addressToDelete = address;
-    this.messageService.add({
-      key: 'c',
-      sticky: true,
-      severity: 'warn',
-      detail: 'Are you sure to delete this address?',
-    });
+    if (this.customer.addresses && this.customer.addresses.length <= 1) {
+      this.messageService.add({
+        key: 'okey',
+        sticky: true,
+        severity: 'warn',
+        detail: 'Customer should have at least one address',
+      });
+    } else if (this.addressToDelete.isMain) {
+      this.messageService.add({
+        key: 'okey',
+        sticky: true,
+        severity: 'warn',
+        detail:
+          'The address that you want to delete is a default address. Please, change default address then try again',
+      });
+    } else {
+      this.messageService.add({
+        key: 'c',
+        sticky: true,
+        severity: 'warn',
+        detail: 'Are you sure to delete this address?',
+      });
+    }
   }
   remove() {
     this.customersService.removeAdressToStore(this.addressToDelete);
   }
   handleConfigInput(event: any) {
-    console.warn(event.isTrusted);
     this.customer.addresses = this.customer.addresses?.map((adr) => {
       const newAddress = { ...adr, isMain: false };
       return newAddress;
