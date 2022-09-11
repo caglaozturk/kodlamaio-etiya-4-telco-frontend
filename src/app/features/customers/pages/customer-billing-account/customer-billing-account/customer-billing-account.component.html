@@ -25,9 +25,10 @@
                 class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
               >
                 <input
-                  type="text-area"
+                  type="text"
                   etiyaInput="dark"
                   formControlName="accountName"
+                  maxlength="50"
                   [ngClass]="{
                     'e-invalid-input':
                       isEmpty && accountForm.controls['accountName'].errors
@@ -57,6 +58,7 @@
                   class="e-address-desc"
                   placeholder=""
                   formControlName="description"
+                  maxlength="250"
                   [ngClass]="{
                     'e-invalid-input':
                       isEmpty && accountForm.controls['description'].errors

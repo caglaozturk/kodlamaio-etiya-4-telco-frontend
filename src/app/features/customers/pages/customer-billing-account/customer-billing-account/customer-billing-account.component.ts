@@ -65,8 +65,8 @@ export class CustomerBillingAccountComponent implements OnInit {
 
   createAccountForm() {
     this.accountForm = this.formBuilder.group({
-      accountName: ['', Validators.required],
-      description: ['', Validators.required],
+      accountName: ['', [Validators.required, Validators.maxLength(50)]],
+      description: ['', [Validators.required, Validators.maxLength(250)]],
     });
   }
 
@@ -116,6 +116,15 @@ export class CustomerBillingAccountComponent implements OnInit {
 
   add() {
     if (this.accountForm.valid) {
+      if (this.billingAdress.length == 0 && !this.addresses) {
+        this.messageService.add({
+          detail: 'Must have at least one address',
+          severity: 'danger',
+          summary: 'Error',
+          key: 'etiya-custom',
+        });
+        return;
+      }
       this.isEmpty = false;
       //this.billingAccount = this.accountForm.value;
       //this.billingAccount.addresses = this.billingAdress;

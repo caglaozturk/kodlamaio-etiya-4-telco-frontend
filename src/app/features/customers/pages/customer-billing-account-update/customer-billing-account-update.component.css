@@ -67,3 +67,15 @@ small {
   font-size: 25px !important;
   color: red;
 }
+.e-form-close {
+  display: flex;
+  justify-content: flex-end;
+  color: #f58220;
+  text-decoration: none;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+.e-bill-form-container {
+  padding: 30px;
+  border: 1px solid #f58220 !important;
+}

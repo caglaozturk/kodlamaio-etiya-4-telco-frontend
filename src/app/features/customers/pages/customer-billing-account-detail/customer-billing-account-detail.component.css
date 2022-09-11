@@ -13,3 +13,10 @@
   border: 1px solid #f58220 !important;
   margin-top: 10px;
 }
+.e-empty-data {
+  background-color: #2a5183;
+  height: 59px;
+  border-left: 2px solid #f58220 !important;
+  border-right: 2px solid #f58220 !important;
+  border-bottom: 2px solid #f58220 !important;
+}

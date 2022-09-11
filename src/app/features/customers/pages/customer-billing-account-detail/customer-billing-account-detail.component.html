@@ -29,11 +29,21 @@
   <div class="e-customer-content">
     <div class="m-3">
       <app-table-accordion-header></app-table-accordion-header>
-      <ng-template ngFor let-bill [ngForOf]="billingAccountList">
-        <app-table-accordion
-          [billingAccount]="bill"
-          [customerId]="selectedCustomerId"
-        ></app-table-accordion>
+      <div
+        *ngIf="
+          billingAccountList && billingAccountList.length == 0;
+          else accountList
+        "
+      >
+        <div class="e-empty-data"></div>
+      </div>
+      <ng-template #accountList>
+        <ng-template ngFor let-bill [ngForOf]="billingAccountList">
+          <app-table-accordion
+            [billingAccount]="bill"
+            [customerId]="selectedCustomerId"
+          ></app-table-accordion>
+        </ng-template>
       </ng-template>
     </div>
   </div>

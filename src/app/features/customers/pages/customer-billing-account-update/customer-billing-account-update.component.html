@@ -145,121 +145,127 @@
         </div>
       </div>
       <div *ngIf="isShown == true">
-        <form *ngIf="addressForm" [formGroup]="addressForm">
+        <div class="e-bill-form-container">
           <div class="row">
-            <div class="col-12 col-xl-5">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="city">City<span class="e-star">*</span> </label>
-                </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <div class="e-dropdown">
-                    <select
-                      etiyaInput="dark"
-                      name="gender"
-                      id="gender"
-                      formControlName="city"
-                      [ngClass]="{
-                        'invalid-input':
-                          isShownError && addressForm.controls['city'].errors
-                      }"
-                    >
-                      <option selected disabled hidden [value]="0">
-                        Choose a city
-                      </option>
-                      <option *ngFor="let city of cityList" [value]="city.id">
-                        {{ city.name }}
-                      </option>
-                    </select>
+            <a class="e-form-close" (click)="isShown = false">X</a>
+          </div>
+          <form *ngIf="addressForm" [formGroup]="addressForm">
+            <div class="row">
+              <div class="col-12 col-xl-5">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="city">City<span class="e-star">*</span> </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <div class="e-dropdown">
+                      <select
+                        etiyaInput="dark"
+                        name="gender"
+                        id="gender"
+                        formControlName="city"
+                        [ngClass]="{
+                          'invalid-input':
+                            isShownError && addressForm.controls['city'].errors
+                        }"
+                      >
+                        <option selected disabled hidden [value]="0">
+                          Choose a city
+                        </option>
+                        <option *ngFor="let city of cityList" [value]="city.id">
+                          {{ city.name }}
+                        </option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-xl-7">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="flatNumber"
-                    >House/Flat Number<span class="e-star">*</span>
-                  </label>
+              <div class="col-12 col-xl-7">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="flatNumber"
+                      >House/Flat Number<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="flatNumber"
+                      [ngClass]="{
+                        'invalid-input':
+                          isShownError &&
+                          addressForm.controls['flatNumber'].errors
+                      }"
+                    />
+                  </div>
                 </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <input
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="flatNumber"
-                    [ngClass]="{
-                      'invalid-input':
-                        isShownError &&
-                        addressForm.controls['flatNumber'].errors
-                    }"
-                  />
+              </div>
+              <div class="col-12 col-xl-5">
+                <div class="row e-address-input">
+                  <div class="col-12 col-lg-4 e-address-col-center">
+                    <label for="street"
+                      >Street<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-lg-8 e-address-col-center">
+                    <input
+                      type="text"
+                      etiyaInput="dark"
+                      formControlName="street"
+                      [ngClass]="{
+                        'invalid-input':
+                          isShownError && addressForm.controls['street'].errors
+                      }"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row mb-1">
+                  <div class="col-12 e-address-col-center">
+                    <label for="address-description"
+                      >Address Description<span class="e-star">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 e-address-col-center">
+                    <textarea
+                      class="e-address-desc"
+                      placeholder=""
+                      formControlName="description"
+                      maxlength="250"
+                      [ngClass]="{
+                        'invalid-input':
+                          isShownError &&
+                          addressForm.controls['description'].errors
+                      }"
+                    ></textarea>
+                  </div>
+                  <small
+                    *ngIf="
+                      isShownError &&
+                      (addressForm.controls['description'].errors ||
+                        (isShownError &&
+                          addressForm.controls['street'].errors) ||
+                        (isShownError &&
+                          addressForm.controls['flatNumber'].errors) ||
+                        (isShownError && addressForm.controls['city'].errors))
+                    "
+                    id="lastName-help"
+                    class="p-error block ng-invalid ng-dirty"
+                    style="color: red; margin-left: 400px; margin-top: 5px"
+                  >
+                    Requirements field can not be left blank
+                  </small>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-xl-5">
-              <div class="row e-address-input">
-                <div class="col-12 col-lg-4 e-address-col-center">
-                  <label for="street"
-                    >Street<span class="e-star">*</span>
-                  </label>
-                </div>
-                <div class="col-12 col-lg-8 e-address-col-center">
-                  <input
-                    type="text"
-                    etiyaInput="dark"
-                    formControlName="street"
-                    [ngClass]="{
-                      'invalid-input':
-                        isShownError && addressForm.controls['street'].errors
-                    }"
-                  />
-                </div>
+            <div class="row mt-2 d-flex justify-content-center">
+              <div class="col-2">
+                <button etiyaButton="clear" (click)="addAddress()">SAVE</button>
               </div>
             </div>
-            <div class="col-12">
-              <div class="row mb-1">
-                <div class="col-12 e-address-col-center">
-                  <label for="address-description"
-                    >Address Description<span class="e-star">*</span>
-                  </label>
-                </div>
-                <div class="col-12 e-address-col-center">
-                  <textarea
-                    class="e-address-desc"
-                    placeholder=""
-                    formControlName="description"
-                    maxlength="250"
-                    [ngClass]="{
-                      'invalid-input':
-                        isShownError &&
-                        addressForm.controls['description'].errors
-                    }"
-                  ></textarea>
-                </div>
-                <small
-                  *ngIf="
-                    isShownError &&
-                    (addressForm.controls['description'].errors ||
-                      (isShownError && addressForm.controls['street'].errors) ||
-                      (isShownError &&
-                        addressForm.controls['flatNumber'].errors) ||
-                      (isShownError && addressForm.controls['city'].errors))
-                  "
-                  id="lastName-help"
-                  class="p-error block ng-invalid ng-dirty"
-                  style="color: red; margin-left: 400px; margin-top: 5px"
-                >
-                  Requirements field can not be left blank
-                </small>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2 d-flex justify-content-center">
-            <div class="col-2">
-              <button etiyaButton="clear" (click)="addAddress()">SAVE</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </app-main-layout>
