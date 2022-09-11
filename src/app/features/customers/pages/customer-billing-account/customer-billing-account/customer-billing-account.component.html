@@ -56,18 +56,15 @@
                 <textarea
                   class="e-address-desc"
                   placeholder=""
-                  formControlName="accountDescription"
+                  formControlName="description"
                   [ngClass]="{
                     'e-invalid-input':
-                      isEmpty &&
-                      accountForm.controls['accountDescription'].errors
+                      isEmpty && accountForm.controls['description'].errors
                   }"
                 ></textarea>
               </div>
               <small
-                *ngIf="
-                  isEmpty && accountForm.controls['accountDescription'].errors
-                "
+                *ngIf="isEmpty && accountForm.controls['description'].errors"
                 class="p-error block ng-invalid ng-dirty"
                 style="color: red"
               >

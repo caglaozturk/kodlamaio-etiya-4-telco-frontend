@@ -59,7 +59,12 @@
                 ></textarea>
               </div>
               <small
-                *ngIf="isValid && accountForm.controls['description'].errors"
+                *ngIf="
+                  isValid && [
+                    accountForm.controls['description'].errors ||
+                      accountForm.controls['accountName'].errors
+                  ]
+                "
                 class="p-error block ng-invalid ng-dirty"
                 style="margin-left: 500px; margin-top: -5px"
               >
@@ -106,8 +111,8 @@
                     <tr *ngFor="let billingadr of billingAdress">
                       <th style="display: flex">
                         <!-- <div>
-                              <button etiyaButton="edit"></button>
-                            </div> -->
+                            <button etiyaButton="edit"></button>
+                          </div> -->
                         <div style="margin-left: 65px">
                           {{ billingadr.city.name }}
                         </div>

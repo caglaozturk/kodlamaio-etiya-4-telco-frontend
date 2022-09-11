@@ -66,7 +66,7 @@ export class CustomerBillingAccountComponent implements OnInit {
   createAccountForm() {
     this.accountForm = this.formBuilder.group({
       accountName: ['', Validators.required],
-      accountDescription: ['', Validators.required],
+      description: ['', Validators.required],
     });
   }
 
