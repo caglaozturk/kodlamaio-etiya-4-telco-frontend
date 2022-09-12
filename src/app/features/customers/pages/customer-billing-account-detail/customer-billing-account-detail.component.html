@@ -41,6 +41,7 @@
         <ng-template ngFor let-bill [ngForOf]="billingAccountList">
           <app-table-accordion
             [billingAccount]="bill"
+          (onBillingAccountDelete)="onBillingAccDelete($event)"
             [customerId]="selectedCustomerId"
           ></app-table-accordion>
         </ng-template>

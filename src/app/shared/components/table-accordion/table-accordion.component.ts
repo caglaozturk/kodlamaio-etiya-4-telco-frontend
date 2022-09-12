@@ -1,11 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { BillingAccount } from 'src/app/features/customers/models/billingAccount';
-import { Offer } from 'src/app/features/offers/models/offer';
+import { Customer } from 'src/app/features/customers/models/customer';
 import { MessageService } from 'primeng/api';
 import { CustomersService } from 'src/app/features/customers/services/customer/customers.service';
-import { Customer } from 'src/app/features/customers/models/customer';
 import { Router } from '@angular/router';
-
+import { Offer } from 'src/app/features/offers/models/offer';
+import { Product } from 'src/app/features/customers/models/product';
 @Component({
   selector: 'app-table-accordion',
   templateUrl: './table-accordion.component.html',
@@ -14,46 +21,68 @@ import { Router } from '@angular/router';
 export class TableAccordionComponent implements OnInit {
   @Input() billingAccount!: BillingAccount;
   @Input() customerId!: number;
+  @Output() onBillingAccountDelete = new EventEmitter<BillingAccount>();
   customer!: Customer;
   billingAccountToDelete!: BillingAccount;
+
+  product!: Product;
+  productToDelete!: Product;
 
   constructor(
     private messageService: MessageService,
     private customerService: CustomersService,
-    private router: Router
+    private router: Router,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.getCustomerById();
+    this.messageService.messageObserver.subscribe((data: any) => {
+      if (data.data && data.data.acc) {
+        this.billingAccountToDelete = data.data.acc;
+      }
+    });
+    this.messages();
+  }
+  messages() {
     this.messageService.clearObserver.subscribe((data) => {
       if (data == 'reject') {
         this.messageService.clear();
       } else if (data == 'confirm') {
-        if (
+        this.messageService.clear();
+        if (this.productToDelete) {
+          this.removeProduct();
+          this.billingAccount.orders.forEach((order) => {
+            order.offers?.forEach((offer) => {
+              offer.products = offer.products.filter(
+                (p) => p.id != this.productToDelete.id
+              );
+            });
+          });
+        } else if (
+          this.billingAccountToDelete &&
           this.billingAccountToDelete.orders &&
           this.billingAccountToDelete.orders.length > 0
         ) {
-          this.messageService.clear();
           this.messageService.add({
             key: 'offer',
             severity: 'warn',
             detail:
               'The billing account that you want to delete has an active product(s). You can not delete it!',
           });
-          setTimeout(() => {
-            this.messageService.clear();
-          }, 3000);
-        } else {
-          this.messageService.clear();
+        } else if (
+          this.billingAccountToDelete &&
+          this.billingAccountToDelete.orders &&
+          this.billingAccountToDelete.orders.length == 0
+        ) {
+          this.remove();
           this.messageService.add({
             key: 'offer',
             severity: 'warn',
             detail: 'Customer account deleted successfully',
           });
-          setTimeout(() => {
-            this.messageService.clear();
-          }, 3000);
-          this.remove();
+        } else {
+          console.log('No problem!...');
         }
       }
     });
@@ -138,7 +167,9 @@ export class TableAccordionComponent implements OnInit {
         .getCustomerById(this.customerId)
         .subscribe((data) => {
           this.customer = data;
+          this.cd.detectChanges();
         });
+      // this.getProductList();
     }
   }
 
@@ -148,13 +179,57 @@ export class TableAccordionComponent implements OnInit {
     );
   }
 
+  // getProductList() {
+  //   this.billingAccount?.orders?.forEach((order) => {
+  //     order?.offers?.forEach((offer) => {
+  //       offer?.products?.forEach((product) => {
+  //         this.product = product;
+  //       });
+  //     });
+  //   });
+  // }
+
+  removeProductPopup(product: Product) {
+    this.productToDelete = product;
+    this.messageService.add({
+      key: 'c',
+      severity: 'warn',
+      detail: 'Are you sure you want to delete?',
+    });
+  }
+
+  removeProduct() {
+    let newBillingAccount: BillingAccount[] = [];
+    if (this.customer.billingAccounts)
+      newBillingAccount = this.customer.billingAccounts;
+    newBillingAccount.forEach((acc) => {
+      acc.orders.forEach((order) => {
+        order.offers?.forEach((off) => {
+          off.products = off.products.filter(
+            (p) => p.id != this.productToDelete.id
+          );
+        });
+      });
+    });
+    const newCustomer: Customer = {
+      ...this.customer,
+    };
+    newCustomer.billingAccounts = newBillingAccount;
+    this.customerService.removeProduct(newCustomer).subscribe((data) => {
+      this.getCustomerById();
+    });
+  }
+
   removePopup(billinAccount: BillingAccount) {
     this.billingAccountToDelete = billinAccount;
+
+    console.log(billinAccount);
     this.messageService.add({
       key: 'c',
       sticky: true,
       severity: 'warn',
-      detail: 'Are you sure to delete this billing account?',
+      data: { acc: this.billingAccountToDelete },
+      detail: 'Are you sure you want to delete?',
     });
   }
 
@@ -162,9 +237,8 @@ export class TableAccordionComponent implements OnInit {
     this.customerService
       .removeBillingAccount(this.billingAccountToDelete, this.customer)
       .subscribe((data) => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
+        this.onBillingAccountDelete.emit(this.billingAccountToDelete);
+        this.getCustomerById();
       });
   }
 }

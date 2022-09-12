@@ -18,6 +18,7 @@ import { ContactMedium } from '../../models/contactMedium';
 import { CustomerBillingAccountComponent } from '../../pages/customer-billing-account/customer-billing-account/customer-billing-account.component';
 import { BillingAccount } from '../../models/billingAccount';
 import { SharedStoreState } from 'src/app/shared/store/shared.reducers';
+import { Product } from '../../models/product';
 
 @Injectable({
   providedIn: 'root',
@@ -298,6 +299,7 @@ export class CustomersService {
           accountNumber: Math.floor(
             1000000000 + Math.random() * 90000000
           ).toString(),
+          orders: [],
           status: 'active',
         },
       ],
@@ -323,6 +325,13 @@ export class CustomersService {
     return this.httpClient.put<Customer>(
       `${this.apiControllerUrl}/${customer.id}`,
       newCustomer
+    );
+  }
+
+  removeProduct(customer: Customer): Observable<Customer> {
+    return this.httpClient.put<Customer>(
+      `${this.apiControllerUrl}/${customer.id}`,
+      customer
     );
   }
 }
