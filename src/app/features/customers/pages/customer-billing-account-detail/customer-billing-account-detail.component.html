@@ -38,14 +38,47 @@
         <div class="e-empty-data"></div>
       </div>
       <ng-template #accountList>
-        <ng-template ngFor let-bill [ngForOf]="billingAccountList">
+        <ng-template
+          ngFor
+          let-bill
+          [ngForOf]="billingAccountList | pagination: currentPage"
+        >
           <app-table-accordion
             [billingAccount]="bill"
-          (onBillingAccountDelete)="onBillingAccDelete($event)"
+            (onBillingAccountDelete)="onBillingAccDelete($event)"
             [customerId]="selectedCustomerId"
           ></app-table-accordion>
         </ng-template>
       </ng-template>
+      <nav class="pagenav">
+        <ul class="pagination">
+          <li
+            *ngIf="currentPage > 0"
+            (click)="back()"
+            class="page-item page-item-button"
+          >
+            <a class="page-link"><</a>
+          </li>
+
+          <ng-container *ngFor="let index of pageNumber | createFakeArray">
+            <li class="page-item" (click)="currentPage = index">
+              <a
+                [ngClass]="{ active: index == currentPage }"
+                class="page-link"
+                >{{ index + 1 }}</a
+              >
+            </li>
+          </ng-container>
+
+          <li
+            *ngIf="currentPage < pageNumber - 1"
+            (click)="next()"
+            class="page-item page-item-button"
+          >
+            <a class="page-link">></a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </app-main-layout>
