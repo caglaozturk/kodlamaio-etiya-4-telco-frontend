@@ -5,9 +5,7 @@
 .e-offer-selection-content {
   min-height: 100%;
 }
-.e-buttons {
-  padding: 2rem 4rem;
-}
+
 .e-offer-selection-center {
   display: flex;
   justify-content: center;
@@ -97,4 +95,10 @@
 
 .selected {
   background-color: #83a6d1 !important;
+}
+
+small {
+  font-weight: 200 !important;
+  font-size: 20px !important;
+  color: red;
 }

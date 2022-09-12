@@ -1,5 +1,5 @@
 export interface SearchCampaign {
-  selectedId: number;
+  selectedId1: number;
   campaignId: number;
   campaignName: string;
 }

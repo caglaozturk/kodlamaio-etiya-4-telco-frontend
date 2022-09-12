@@ -24,9 +24,9 @@ export class CampaignsService {
     this.httpClient.get<Offer[]>(this.apiUrl).subscribe({
       next: (response) => {
         let filteredCampaigns = response;
-        if (searchCampaign.selectedId) {
+        if (searchCampaign.selectedId1) {
           filteredCampaigns = filteredCampaigns.filter(
-            (item) => item.type.id == searchCampaign.selectedId
+            (item) => item.type.id == searchCampaign.selectedId1
           );
           console.log(response);
         }

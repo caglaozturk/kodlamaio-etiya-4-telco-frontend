@@ -180,3 +180,6 @@ add new adress */
 
   color: #ffffff;
 }
+.e-btn-accordion-body:disabled {
+  opacity: 0.5;
+}
