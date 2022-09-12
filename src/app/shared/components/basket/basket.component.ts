@@ -34,4 +34,7 @@ export class BasketComponent implements OnInit {
   clear() {
     this.offerService.clearBasketInStore();
   }
+  removeOffer(offer: Offer) {
+    this.offerService.removeOfferInStore(offer);
+  }
 }

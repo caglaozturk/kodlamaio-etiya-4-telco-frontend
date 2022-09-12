@@ -91,7 +91,7 @@
                   <tbody class="table-body">
                     <tr
                       class="row"
-                      *ngFor="let catalogOffer of catalogOffersList"
+                      *ngFor="let catalogOffer of getUnSelectedCatalogOffers()"
                       (click)="addBasket(catalogOffer)"
                       [ngClass]="{ selected: isSelected(catalogOffer) }"
                     >
@@ -196,7 +196,9 @@
                   <tbody class="table-body">
                     <tr
                       class="row"
-                      *ngFor="let campaignOffer of campaignOffersList"
+                      *ngFor="
+                        let campaignOffer of getUnSelectedCampaignOffers()
+                      "
                       (click)="addBasket(campaignOffer)"
                       [ngClass]="{ selected: isSelected(campaignOffer) }"
                     >
@@ -228,8 +230,7 @@
         </div>
       </div>
       <div class="row e-buttons">
-        +
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-3 d-flex justify-content-start pl-3">
           <button
             etiyaButton="clear"
             [routerLink]="
@@ -240,26 +241,10 @@
             PREVIOUS
           </button>
         </div>
-        <div class="col-4 d-flex justify-content-end">
-          <button
-            etiyaButton="accordion-body"
-            (click)="saveBasket()"
-            [disabled]="
-              offerList.length == 0 &&
-              campaignName.value.length === 0 &&
-              campaignId.value.length === 0 &&
-              selectedId.value.length === 0 &&
-              prodOfferId.value.length === 0 &&
-              prodOfferName.value.length === 0 &&
-              selectedId1.value.length === 0
-            "
-          >
-            Add Basket
-          </button>
-        </div>
-        <div class="col-4 d-flex justify-content-end">
+        <div class="col-9 d-flex justify-content-end pe-3">
           <button
             etiyaButton="clear"
+            [disabled]="!itemsInBasket"
             [routerLink]="
               '/dashboard/customers/' +
               selectedCustomerId +

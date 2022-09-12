@@ -7,7 +7,7 @@
       <span class="e-line-right"></span>
     </div>
     <div class="scroll">
-      <div *ngFor="let offer of basket">
+      <div *ngFor="let offer of basket" (click)="removeOffer(offer)">
         <p>
           Campain ID : {{ offer.type.id }}<br />
           Prod Offer ID : {{ offer.id }}<br />
