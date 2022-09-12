@@ -74,9 +74,9 @@ export class CustomerBillingAccountComponent implements OnInit {
     this.addressForm = this.formBuilder.group({
       id: [Math.floor(Math.random() * 1000)],
       city: ['', Validators.required],
-      street: ['', Validators.required],
-      flatNumber: ['', Validators.required],
-      description: ['', Validators.required],
+      street: ['', [Validators.required, Validators.maxLength(50)]],
+      flatNumber: ['', [Validators.required, Validators.maxLength(20)]],
+      description: ['', [Validators.required, Validators.maxLength(200)]],
     });
   }
 
