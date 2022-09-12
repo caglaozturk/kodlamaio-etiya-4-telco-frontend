@@ -4,17 +4,19 @@
 >
   <div class="accordion-item">
     <h2 class="accordion-header" [id]="'flush-heading' + billingAccount.id">
-      <button class="accordion-button collapsed" type="button">
+      <div class="accordion-button collapsed">
         <div class="col-12 e-accordion-cols">
           <div class="col-1 e-accordion-text">
-            <img
-              src="../assets/img/down_arrow.png"
-              alt=""
+            <button
+              class="accordion-button1 collapsed"
+              type="button"
               data-bs-toggle="collapse"
               [attr.data-bs-target]="'#flush-collapse' + billingAccount.id"
               aria-expanded="true"
               [attr.aria-controls]="'flush-collapse' + billingAccount.id"
-            />
+            >
+              <img src="../assets/img/down_arrow.png" alt="" />
+            </button>
           </div>
           <div class="col-2 e-accordion-text">{{ billingAccount.status }}</div>
           <div class="col-2 e-accordion-text">
@@ -26,16 +28,16 @@
           <div class="col-3 e-accordion-text">Billing Account</div>
           <div class="col-2 e-accordion-text">
             <img
-              src="../assets/img/pencil_accordion.png"
-              (click)="updateBillingAccount(billingAccount)"
-            />
-            <img
               src="../assets/img/delete_accordion.png"
               (click)="removePopup(billingAccount)"
             />
+            <img
+              src="../assets/img/pencil_accordion.png"
+              (click)="updateBillingAccount(billingAccount)"
+            />
           </div>
         </div>
-      </button>
+      </div>
     </h2>
     <div
       [id]="'flush-collapse' + billingAccount.id"
