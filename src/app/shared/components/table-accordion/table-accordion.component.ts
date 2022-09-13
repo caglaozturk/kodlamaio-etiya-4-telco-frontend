@@ -23,7 +23,7 @@ export class TableAccordionComponent implements OnInit {
   @Input() customerId!: number;
   @Output() onBillingAccountDelete = new EventEmitter<BillingAccount>();
   customer!: Customer;
-  billingAccountToDelete!: BillingAccount;
+  billingAccountToDelete!: BillingAccount | undefined;
 
   product!: Product;
   productToDelete!: Product;
@@ -49,7 +49,6 @@ export class TableAccordionComponent implements OnInit {
       if (data == 'reject') {
         this.messageService.clear();
       } else if (data == 'confirm') {
-        this.messageService.clear();
         if (this.productToDelete) {
           this.removeProduct();
           this.billingAccount.orders.forEach((order) => {
@@ -59,23 +58,28 @@ export class TableAccordionComponent implements OnInit {
               );
             });
           });
+          this.messageService.clear();
         } else if (
           this.billingAccountToDelete &&
           this.billingAccountToDelete.orders &&
-          this.billingAccountToDelete.orders.length > 0
+          this.billingAccountToDelete.orders.filter(
+            (o) =>
+              o.offers?.filter((off) => off.products.length > 0).length ?? 0 > 0
+          ).length > 0
         ) {
+          this.messageService.clear();
+          this.billingAccountToDelete = undefined;
           this.messageService.add({
             key: 'offer',
             severity: 'warn',
             detail:
               'The billing account that you want to delete has an active product(s). You can not delete it!',
           });
-        } else if (
-          this.billingAccountToDelete &&
-          this.billingAccountToDelete.orders &&
-          this.billingAccountToDelete.orders.length == 0
-        ) {
+        } else if (this.billingAccountToDelete) {
           this.remove();
+          this.billingAccountToDelete = undefined;
+          this.messageService.clear();
+
           this.messageService.add({
             key: 'offer',
             severity: 'warn',
@@ -83,6 +87,7 @@ export class TableAccordionComponent implements OnInit {
           });
         } else {
           console.log('No problem!...');
+          this.messageService.clear();
         }
       }
     });
@@ -191,6 +196,7 @@ export class TableAccordionComponent implements OnInit {
 
   removeProductPopup(product: Product) {
     this.productToDelete = product;
+    this.billingAccountToDelete = undefined;
     this.messageService.add({
       key: 'c',
       severity: 'warn',
@@ -234,11 +240,13 @@ export class TableAccordionComponent implements OnInit {
   }
 
   remove() {
-    this.customerService
-      .removeBillingAccount(this.billingAccountToDelete, this.customer)
-      .subscribe((data) => {
-        this.onBillingAccountDelete.emit(this.billingAccountToDelete);
-        this.getCustomerById();
-      });
+    if (this.billingAccountToDelete) {
+      this.onBillingAccountDelete.emit(this.billingAccountToDelete);
+      this.customerService
+        .removeBillingAccount(this.billingAccountToDelete, this.customer)
+        .subscribe((data) => {
+          this.getCustomerById();
+        });
+    }
   }
 }
