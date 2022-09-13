@@ -55,7 +55,7 @@ export class CreateCustomerComponent implements OnInit {
         formatDate(new Date(bDate), 'yyyy-MM-dd', 'en'),
         Validators.required,
       ],
-      gender: [this.customer.gender, Validators.required],
+      gender: [this.customer.gender || '', Validators.required],
       fatherName: [this.customer.fatherName, [Validators.maxLength(50)]],
       motherName: [this.customer.motherName, [Validators.maxLength(50)]],
       nationalityId: [

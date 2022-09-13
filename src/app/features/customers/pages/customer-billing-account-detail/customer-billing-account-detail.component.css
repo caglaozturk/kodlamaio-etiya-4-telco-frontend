@@ -1,12 +1,8 @@
-.bar-menu {
-  margin-top: -35px;
-  margin-left: 350px;
-}
-
 .app-user-info {
   width: 264px;
   margin-left: 35px;
   margin-top: -20px;
+  margin-left: 35px;
 }
 
 ::ng-deep .e-btn-new-address {

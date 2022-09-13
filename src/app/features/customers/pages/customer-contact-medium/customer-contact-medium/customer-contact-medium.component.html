@@ -1,6 +1,6 @@
 <div class="e-create-customer-table">
   <app-navbar></app-navbar>
-  <div class="container-fluid mb-4">
+  <div class="container-fluid mb-1">
     <div class="row">
       <div class="col-12 col-lg-3">
         <div class="col-12 app-user-info">
@@ -17,52 +17,54 @@
   </div>
 
   <app-main-layout [layoutTitle]="'Contact Medium'">
-    <div class="p-5"></div>
-    <div class="e-customer-content" *ngIf="customer.contactMedium">
-      <div class="container">
-        <div class="row">
-          <div class="col-2">
-            <label class="e-frame-label">Email :</label>
+    <div class="p-4"></div>
+    <div class="d-flex justify-content-center">
+      <div class="e-customer-content" *ngIf="customer.contactMedium">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <label class="e-frame-label">Email :</label>
+            </div>
+            <div class="col-4">
+              <label class="e-frame-label">{{
+                customer.contactMedium.email
+              }}</label>
+            </div>
+            <div class="col-2">
+              <label class="e-frame-label">Home Phone :</label>
+            </div>
+            <div class="col-4">
+              <label class="e-frame-label">{{
+                customer.contactMedium.homePhone
+              }}</label>
+            </div>
           </div>
-          <div class="col-4">
-            <label class="e-frame-label">{{
-              customer.contactMedium.email
-            }}</label>
-          </div>
-          <div class="col-2">
-            <label class="e-frame-label">Home Phone :</label>
-          </div>
-          <div class="col-4">
-            <label class="e-frame-label">{{
-              customer.contactMedium.homePhone
-            }}</label>
-          </div>
-        </div>
 
-        <div class="row mt-3">
-          <div class="col-2">
-            <label class="e-frame-label">Mobile Phone :</label>
+          <div class="row mt-3">
+            <div class="col-2">
+              <label class="e-frame-label">Mobile Phone :</label>
+            </div>
+            <div class="col-4">
+              <label class="e-frame-label">{{
+                customer.contactMedium.mobilePhone
+              }}</label>
+            </div>
+            <div class="col-2">
+              <label class="e-frame-label">Fax :</label>
+            </div>
+            <div class="col-4">
+              <label class="e-frame-label">{{
+                customer.contactMedium.fax
+              }}</label>
+            </div>
           </div>
-          <div class="col-4">
-            <label class="e-frame-label">{{
-              customer.contactMedium.mobilePhone
-            }}</label>
-          </div>
-          <div class="col-2">
-            <label class="e-frame-label">Fax :</label>
-          </div>
-          <div class="col-4">
-            <label class="e-frame-label">{{
-              customer.contactMedium.fax
-            }}</label>
-          </div>
+          <button
+            etiyaButton="edit"
+            [routerLink]="
+              '/dashboard/customers/customer-contact-form/' + selectedCustomerId
+            "
+          ></button>
         </div>
-        <button
-          etiyaButton="edit"
-          [routerLink]="
-            '/dashboard/customers/customer-contact-form/' + selectedCustomerId
-          "
-        ></button>
       </div>
     </div>
   </app-main-layout>

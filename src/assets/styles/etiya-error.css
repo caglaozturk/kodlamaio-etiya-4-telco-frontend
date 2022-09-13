@@ -8,3 +8,10 @@
   font-weight: bold;
   font-size: 40px;
 }
+
+.bar-menu {
+  margin-top: -35px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

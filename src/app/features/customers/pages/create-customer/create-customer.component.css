@@ -37,7 +37,6 @@
   left: 535.53px;
   top: 333px;
   color: #f58220;
-  background-image: url('../../../../../assets/img/arrow.png') !important;
   background-repeat: no-repeat !important;
   background-position: right !important;
   background: #061f3e;
@@ -65,4 +64,7 @@ input[type='date'] {
 }
 input::placeholder {
   color: #fff;
+}
+.col-12 {
+  padding: 0 0.5rem;
 }

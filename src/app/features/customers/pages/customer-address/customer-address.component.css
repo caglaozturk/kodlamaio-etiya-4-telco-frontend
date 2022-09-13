@@ -1,13 +1,9 @@
 .app-user-info {
   width: 264px;
   margin-left: 35px;
+  margin-top: -20px;
+  margin-left: 35px;
 }
-
-.bar-menu {
-  margin-left: 30%;
-  margin-top: -55px;
-}
-
 ::ng-deep.e-table {
   margin-top: 55px;
 }
@@ -40,4 +36,7 @@ td {
   display: flex;
   align-items: center;
   padding-top: 12px;
+}
+::ng-deep .e-table {
+  margin-top: 0;
 }
