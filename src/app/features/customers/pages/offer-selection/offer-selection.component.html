@@ -97,9 +97,6 @@
                     >
                       <td class="col-3">{{ catalogOffer.id }}</td>
                       <td class="col-9">
-                        <span *ngIf="isSelected(catalogOffer)"
-                          >{{ getOfferCount(catalogOffer) }}x</span
-                        >
                         {{ catalogOffer.name }}
                       </td>
                     </tr>
@@ -205,9 +202,6 @@
                       <td class="col-2">{{ campaignOffer.type.id }}</td>
                       <td class="col-3">{{ campaignOffer.id }}</td>
                       <td class="col-7">
-                        <span *ngIf="isSelected(campaignOffer)"
-                          >{{ getOfferCount(campaignOffer) }}x</span
-                        >
                         {{ campaignOffer.name }}
                       </td>
                     </tr>
