@@ -22,7 +22,7 @@
           "street": "Granby",
           "flatNumber": 6,
           "description": "6128 Jay Alley",
-          "isMain": false
+          "isPrimary": false
         },
         {
           "city": {
@@ -33,7 +33,7 @@
           "flatNumber": 55,
           "description": "68 Hudson Street",
           "id": 2,
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -222,7 +222,7 @@
           "street": "Ilene",
           "flatNumber": 8,
           "description": "233 Trailsway Park",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -456,7 +456,7 @@
           "street": "Waxwing",
           "flatNumber": 16,
           "description": "4 Golden Leaf Place",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -489,7 +489,7 @@
           "street": "Vera",
           "flatNumber": 5,
           "description": "2792 Autumn Leaf Avenue",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -500,7 +500,7 @@
           "street": "Mcguire",
           "flatNumber": 18,
           "description": "03957 Sloan Trail",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -588,7 +588,7 @@
           "street": "Killdeer",
           "flatNumber": 3,
           "description": "7 Badeau Pass",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -599,7 +599,7 @@
           "street": "Melrose",
           "flatNumber": 9,
           "description": "751 Stoughton Place",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -754,7 +754,7 @@
           "street": "Fieldstone",
           "flatNumber": 11,
           "description": "7 Brown Hill",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -837,7 +837,7 @@
           "street": "Schurz",
           "flatNumber": 11,
           "description": "671 Di Loreto Point",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -848,7 +848,7 @@
           "street": "Northview",
           "flatNumber": 6,
           "description": "8 Mosinee Place",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -980,7 +980,7 @@
           "street": "School",
           "flatNumber": 18,
           "description": "92590 Hayes Way",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -1131,7 +1131,7 @@
           "street": "Mariners Cove",
           "flatNumber": 12,
           "description": "302 Cascade Avenue",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -1312,7 +1312,7 @@
           "street": "Mesta",
           "flatNumber": 17,
           "description": "8 Old Shore Trail",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -1323,7 +1323,7 @@
           "street": "Bartelt",
           "flatNumber": 15,
           "description": "78 International Junction",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -1504,7 +1504,7 @@
           "street": "Melvin",
           "flatNumber": 14,
           "description": "320 Welch Place",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -1557,7 +1557,7 @@
           "street": "Oriole",
           "flatNumber": 1,
           "description": "785 Shelley Point",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -1568,7 +1568,7 @@
           "street": "Hagan",
           "flatNumber": 2,
           "description": "43 Sunnyside Crossing",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -1656,7 +1656,7 @@
           "street": "Fordem",
           "flatNumber": 15,
           "description": "3 Mariners Cove Place",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -1667,7 +1667,7 @@
           "street": "Hagan",
           "flatNumber": 8,
           "description": "44 Cherokee Drive",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -1720,7 +1720,7 @@
           "street": "Talmadge",
           "flatNumber": 13,
           "description": "59 Lakeland Circle",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -1753,7 +1753,7 @@
           "street": "Mayer",
           "flatNumber": 3,
           "description": "66793 Vahlen Circle",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -1841,7 +1841,7 @@
           "street": "Hudson",
           "flatNumber": 4,
           "description": "2 Shoshone Hill",
-          "isMain": true
+          "isPrimary": true
         },
         {
           "id": 2,
@@ -1852,7 +1852,7 @@
           "street": "Moose",
           "flatNumber": 17,
           "description": "485 Dixon Junction",
-          "isMain": false
+          "isPrimary": false
         }
       ],
       "contactMedium": {
@@ -2048,7 +2048,7 @@
           "street": "Delaware",
           "flatNumber": 14,
           "description": "25 Blaine Circle",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -2190,7 +2190,7 @@
           "street": "2nd",
           "flatNumber": 16,
           "description": "6313 Dwight Plaza",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -2386,7 +2386,7 @@
           "street": "Gateway",
           "flatNumber": 19,
           "description": "8 Tony Point",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {
@@ -2474,7 +2474,7 @@
           "street": "Laurel",
           "flatNumber": 4,
           "description": "8 6th Junction",
-          "isMain": true
+          "isPrimary": true
         }
       ],
       "contactMedium": {

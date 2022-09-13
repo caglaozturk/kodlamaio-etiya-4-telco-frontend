@@ -110,8 +110,8 @@
                             id="flexRadioDefault1"
                             (change)="handleConfigInput($event)"
                             [value]="addresses.id"
-                            [checked]="addresses.isMain"
-                            [disabled]="addresses.isMain == true"
+                            [checked]="addresses.isPrimary"
+                            [disabled]="addresses.isPrimary == true"
                           />
                           <label
                             class="form-check-label"
@@ -141,7 +141,7 @@
                               id="flexRadioDefault1"
                               (change)="handleConfigInput($event)"
                               [value]="addresses.id"
-                              [checked]="addresses.isMain"
+                              [checked]="addresses.isPrimary"
                             />
                             <label
                               class="form-check-label"
@@ -172,7 +172,7 @@
                             id="flexRadioDefault1"
                             (change)="handleConfigInput($event)"
                             value="{{ billingadr.id }}"
-                            [checked]="billingadr.isMain"
+                            [checked]="billingadr.isPrimary"
                           />
                           <label
                             class="form-check-label"
@@ -234,8 +234,8 @@
                     <div class="e-dropdown">
                       <select
                         etiyaInput="dark"
-                        name="gender"
-                        id="gender"
+                        name="city"
+                        id="city"
                         formControlName="city"
                         [ngClass]="{
                           'e-invalid-input':

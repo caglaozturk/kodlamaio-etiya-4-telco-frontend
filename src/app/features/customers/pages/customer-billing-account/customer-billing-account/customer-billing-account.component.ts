@@ -91,7 +91,7 @@ export class CustomerBillingAccountComponent implements OnInit {
     });
   }
 
-  isMainAdd() {
+  isPrimaryAdd() {
     return this.addresses == undefined ? true : false;
   }
 
@@ -103,7 +103,7 @@ export class CustomerBillingAccountComponent implements OnInit {
         city: this.cityList.find(
           (city) => city.id == this.addressForm.value.city.id
         ),
-        isMain: this.isMainAdd(),
+        isPrimary: this.isPrimaryAdd(),
       };
       this.billingAdress.push(addressToAdd);
       console.log(this.billingAdress);
@@ -165,7 +165,7 @@ export class CustomerBillingAccountComponent implements OnInit {
       .getCustomerById(this.selectedCustomerId)
       .subscribe((data) => {
         data.addresses?.forEach((adr) => {
-          if (adr.isMain == true) this.addresses = adr;
+          if (adr.isPrimary == true) this.addresses = adr;
         });
       });
   }
@@ -174,7 +174,7 @@ export class CustomerBillingAccountComponent implements OnInit {
     //this.add(event.target.value)
     this.billingAccount.addresses = this.billingAccount.addresses?.map(
       (adr) => {
-        const newAddress = { ...adr, isMain: false };
+        const newAddress = { ...adr, isPrimary: false };
         return newAddress;
       }
     );
@@ -183,7 +183,7 @@ export class CustomerBillingAccountComponent implements OnInit {
       return adr.id == event.target.value;
     });
 
-    findAddressBill!.isMain = true;
+    findAddressBill!.isPrimary = true;
     this.customerService.update(this.customer).subscribe((data) => {
       console.log(data);
       this.getCustomerById();

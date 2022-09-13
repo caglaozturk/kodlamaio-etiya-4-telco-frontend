@@ -67,15 +67,15 @@ export class AddAddressInfoComponent implements OnInit {
     }
   }
 
-  isMainAdd() {
+  isPrimaryAdd() {
     return this.customer.addresses?.length == 0 ? true : false;
   }
 
-  getSelectedIsMain() {
+  getSelectedisPrimary() {
     let selectedAddress = this.customer.addresses?.find(
       (address) => address.id == this.selectedAddressId
     );
-    return selectedAddress?.isMain;
+    return selectedAddress?.isPrimary;
   }
 
   addAddress() {
@@ -85,7 +85,7 @@ export class AddAddressInfoComponent implements OnInit {
         city: this.cityList.find(
           (city) => city.id == this.addressForm.value.city
         ),
-        isMain: this.isMainAdd(),
+        isPrimary: this.isPrimaryAdd(),
       };
       this.isShow = false;
       this.customersService.addAddressInfoToStore(addressToAdd, this.customer);
@@ -107,7 +107,7 @@ export class AddAddressInfoComponent implements OnInit {
         city: this.cityList.find(
           (city) => city.id == this.addressForm.value.city
         ),
-        isMain: this.getSelectedIsMain(),
+        isPrimary: this.getSelectedisPrimary(),
       };
       console.log(addressToUpdate);
       this.customersService.updateAddressInfoToStore(addressToUpdate);

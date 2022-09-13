@@ -45,7 +45,7 @@ export class ListAddressInfoComponent implements OnInit {
         severity: 'warn',
         detail: 'Customer should have at least one address',
       });
-    } else if (this.addressToDelete.isMain) {
+    } else if (this.addressToDelete.isPrimary) {
       this.messageService.add({
         key: 'okey',
         sticky: true,
@@ -67,13 +67,13 @@ export class ListAddressInfoComponent implements OnInit {
   }
   handleConfigInput(event: any) {
     this.customer.addresses = this.customer.addresses?.map((adr) => {
-      const newAddress = { ...adr, isMain: false };
+      const newAddress = { ...adr, isPrimary: false };
       return newAddress;
     });
     let findAddress = this.customer.addresses?.find((adr) => {
       return adr.id == event.target.value;
     }) as Address;
-    findAddress!.isMain = true;
+    findAddress!.isPrimary = true;
 
     this.customersService.updateAddressInfoToStore(findAddress);
   }
