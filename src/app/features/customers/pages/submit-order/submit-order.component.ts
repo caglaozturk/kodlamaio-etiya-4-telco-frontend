@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { Order } from 'src/app/features/orders/models/order';
 import { OrderService } from 'src/app/features/orders/services/order/order.service';
 import { Customer } from '../../models/customer';
@@ -19,7 +20,8 @@ export class SubmitOrderComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private orderService: OrderService,
     private customerService: CustomersService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -73,6 +75,12 @@ export class SubmitOrderComponent implements OnInit {
     this.orderService
       .addOrder(this.order, this.customer, this.billingAccountId)
       ?.subscribe(() => {
+        this.messageService.add({
+          detail: 'Your order has been taken. Processing…',
+          severity: 'success',
+          summary: 'Add',
+          key: 'etiya-custom',
+        });
         this.router.navigateByUrl('/dashboard/customers/customer-dashboard');
       });
   }
