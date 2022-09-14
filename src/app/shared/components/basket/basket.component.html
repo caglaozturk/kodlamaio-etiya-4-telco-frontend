@@ -7,12 +7,20 @@
       <span class="e-line-right"></span>
     </div>
     <div class="scroll">
-      <div *ngFor="let offer of basket" (click)="removeOffer(offer)">
-        <p>
-          Campain ID : {{ offer.type.id }}<br />
-          Prod Offer ID : {{ offer.id }}<br />
-          Prod Offer Name :{{ offer.name }}
-        </p>
+      <div *ngFor="let offer of basket" class="row">
+        <div class="col-9">
+          <p>
+            Campain ID : {{ offer.type.id }}<br />
+            Prod Offer ID : {{ offer.id }}<br />
+            Prod Offer Name :{{ offer.name }}
+          </p>
+        </div>
+        <div class="col-3">
+          <button
+            class="e-btn-basket-remove"
+            (click)="removeOffer(offer)"
+          ></button>
+        </div>
       </div>
     </div>
     <div class="basket-total-price-row">

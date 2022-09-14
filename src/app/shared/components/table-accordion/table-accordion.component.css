@@ -110,3 +110,6 @@
   flex-direction: column;
   justify-content: center;
 }
+.accordion-button.collapsed {
+  height: 101px;
+}

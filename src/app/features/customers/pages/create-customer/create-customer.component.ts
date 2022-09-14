@@ -52,7 +52,7 @@ export class CreateCustomerComponent implements OnInit {
         [Validators.required, Validators.maxLength(50)],
       ],
       birthDate: [
-        formatDate(new Date(bDate), 'yyyy-MM-dd', 'en'),
+        formatDate('2004-01-01', 'yyyy-MM-dd', 'en'),
         Validators.required,
       ],
       gender: [this.customer.gender || '', Validators.required],
