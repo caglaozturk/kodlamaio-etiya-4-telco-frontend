@@ -176,9 +176,15 @@
                         id="gender"
                         class="p-2"
                         formControlName="gender"
+                        [ngClass]="{
+                          'e-invalid-input':
+                            isShow &&
+                            updateCustomerForm.controls['gender'].errors
+                        }"
                       >
-                        <option selected value="Female">Female</option>
-                        <option value="Erkek">Erkek</option>
+                        <option selected disabled value="">Select</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
