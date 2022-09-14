@@ -26,7 +26,7 @@
                   type="text"
                   etiyaInput="dark"
                   formControlName="accountName"
-                  maxlength="100"
+                  maxlength="50"
                   [ngClass]="{
                     'e-invalid-input':
                       (accountForm.get('accountName')?.hasError('required') &&
@@ -59,7 +59,7 @@
                 <textarea
                   class="e-address-desc mb-3"
                   formControlName="description"
-                  maxlength="100"
+                  maxlength="250"
                   [ngClass]="{
                     'e-invalid-input':
                       (accountForm.get('description')?.hasError('required') &&

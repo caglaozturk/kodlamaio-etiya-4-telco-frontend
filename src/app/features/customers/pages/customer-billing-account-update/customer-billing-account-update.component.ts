@@ -73,8 +73,14 @@ export class CustomerBillingAccountUpdateComponent implements OnInit {
 
   updateAccountForm() {
     this.accountForm = this.formBuilder.group({
-      accountName: [this.billingAccount?.accountName, Validators.required],
-      description: [this.billingAccount?.description, Validators.required],
+      accountName: [
+        this.billingAccount?.accountName,
+        [Validators.required, Validators.maxLength(50)],
+      ],
+      description: [
+        this.billingAccount?.description,
+        [Validators.required, Validators.maxLength(250)],
+      ],
     });
   }
 
