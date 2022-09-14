@@ -21,9 +21,7 @@
               >
                 <label for="account-name">Account Name* </label>
               </div>
-              <div
-                class="col-12 col-lg-8 d-flex justify-content-lg-start align-items-center"
-              >
+              <div class="col-12 col-lg-8">
                 <input
                   type="text"
                   etiyaInput="dark"
@@ -34,14 +32,14 @@
                       isEmpty && accountForm.controls['accountName'].errors
                   }"
                 />
+                <small
+                  *ngIf="isEmpty && accountForm.controls['accountName'].errors"
+                  class="p-error block ng-invalid ng-dirty"
+                  etiyaError="error-text"
+                >
+                  Required areas must be entered
+                </small>
               </div>
-              <small
-                *ngIf="isEmpty && accountForm.controls['accountName'].errors"
-                class="p-error block ng-invalid ng-dirty"
-                style="color: red; margin-left: 487px"
-              >
-                Required areas must be entered
-              </small>
             </div>
           </div>
           <div class="col-12 mb-5">
@@ -51,11 +49,9 @@
               >
                 <label for="account-description">Account Description * </label>
               </div>
-              <div
-                class="col-12 d-flex justify-content-lg-start align-items-center"
-              >
+              <div class="col-12">
                 <textarea
-                  class="e-address-desc"
+                  class="e-address-desc mb-3"
                   placeholder=""
                   formControlName="description"
                   maxlength="250"
@@ -64,14 +60,14 @@
                       isEmpty && accountForm.controls['description'].errors
                   }"
                 ></textarea>
+                <small
+                  *ngIf="isEmpty && accountForm.controls['description'].errors"
+                  class="p-error block ng-invalid ng-dirty"
+                  etiyaError="error-text"
+                >
+                  Required areas must be entered
+                </small>
               </div>
-              <small
-                *ngIf="isEmpty && accountForm.controls['description'].errors"
-                class="p-error block ng-invalid ng-dirty"
-                style="color: red"
-              >
-                Required areas must be entered
-              </small>
             </div>
           </div>
         </div>
@@ -253,7 +249,7 @@
                     <small
                       *ngIf="isValid && addressForm.controls['city'].errors"
                       class="p-error block ng-invalid ng-dirty"
-                      style="color: red"
+                      etiyaError="error-text"
                     >
                       Required areas must be entered
                     </small>
@@ -278,14 +274,16 @@
                           isValid && addressForm.controls['flatNumber'].errors
                       }"
                     />
+                    <small
+                      *ngIf="
+                        isValid && addressForm.controls['flatNumber'].errors
+                      "
+                      class="p-error block ng-invalid ng-dirty"
+                      etiyaError="error-text"
+                    >
+                      Required areas must be entered
+                    </small>
                   </div>
-                  <small
-                    *ngIf="isValid && addressForm.controls['flatNumber'].errors"
-                    class="p-error block ng-invalid ng-dirty"
-                    style="color: red; margin-left: 288px"
-                  >
-                    Required areas must be entered
-                  </small>
                 </div>
               </div>
               <div class="col-12 col-xl-5">
@@ -306,14 +304,14 @@
                           isValid && addressForm.controls['street'].errors
                       }"
                     />
+                    <small
+                      *ngIf="isValid && addressForm.controls['street'].errors"
+                      class="p-error block ng-invalid ng-dirty"
+                      etiyaError="error-text"
+                    >
+                      Required areas must be entered
+                    </small>
                   </div>
-                  <small
-                    *ngIf="isValid && addressForm.controls['street'].errors"
-                    class="p-error block ng-invalid ng-dirty"
-                    style="color: red; margin-left: 203px"
-                  >
-                    Required areas must be entered
-                  </small>
                 </div>
               </div>
               <div class="col-12">
@@ -323,7 +321,7 @@
                       >Address Description<span class="e-star">*</span>
                     </label>
                   </div>
-                  <div class="col-12 e-address-col-center">
+                  <div class="col-12 e-address-col-center mb-3">
                     <textarea
                       class="e-address-desc"
                       placeholder=""
@@ -340,7 +338,7 @@
                       isValid && addressForm.controls['description'].errors
                     "
                     class="p-error block ng-invalid ng-dirty"
-                    style="color: red"
+                    etiyaError="error-text"
                   >
                     Required areas must be entered
                   </small>
