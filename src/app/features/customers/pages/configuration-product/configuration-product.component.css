@@ -112,3 +112,6 @@
   border-radius: 2px;
   color: #ffffff;
 }
+.table.e-table {
+  width: 100% !important;
+}

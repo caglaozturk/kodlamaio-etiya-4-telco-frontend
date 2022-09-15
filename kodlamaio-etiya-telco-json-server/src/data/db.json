@@ -76,19 +76,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -149,19 +149,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 65
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 80
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -183,13 +183,13 @@
                     {
                       "id": 10,
                       "name": "TV Broadcast",
-                      "description ": "Integer tincidunt ante vel ipsum.",
+                      "description": "Integer tincidunt ante vel ipsum.",
                       "amount": 30
                     },
                     {
                       "id": 15,
                       "name": "Etimaster Satellite Receiver 45121",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 40
                     }
                   ]
@@ -265,19 +265,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -294,13 +294,13 @@
                     {
                       "id": 10,
                       "name": "TV Broadcast",
-                      "description ": "Integer tincidunt ante vel ipsum.",
+                      "description": "Integer tincidunt ante vel ipsum.",
                       "amount": 30
                     },
                     {
                       "id": 15,
                       "name": "Etimaster Satellite Receiver 45121",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 40
                     }
                   ]
@@ -317,25 +317,25 @@
                     {
                       "id": 19,
                       "name": "Phone Number",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 15
                     },
                     {
                       "id": 16,
                       "name": "500 minute Telephone Dialing",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 10
                     },
                     {
                       "id": 17,
                       "name": "1000 SMS",
-                      "description ": "Duis at velit eu est congue elementum.",
+                      "description": "Duis at velit eu est congue elementum.",
                       "amount": 5
                     },
                     {
                       "id": 18,
                       "name": "15GB Mobile Internet",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 30
                     }
                   ]
@@ -377,25 +377,25 @@
                     {
                       "id": 19,
                       "name": "Phone Number",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 15
                     },
                     {
                       "id": 16,
                       "name": "500 minute Telephone Dialing",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 10
                     },
                     {
                       "id": 17,
                       "name": "1000 SMS",
-                      "description ": "Duis at velit eu est congue elementum.",
+                      "description": "Duis at velit eu est congue elementum.",
                       "amount": 5
                     },
                     {
                       "id": 18,
                       "name": "15GB Mobile Internet",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 30
                     }
                   ]
@@ -417,13 +417,13 @@
                     {
                       "id": 10,
                       "name": "TV Broadcast",
-                      "description ": "Integer tincidunt ante vel ipsum.",
+                      "description": "Integer tincidunt ante vel ipsum.",
                       "amount": 30
                     },
                     {
                       "id": 15,
                       "name": "Etimaster Satellite Receiver 45121",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 40
                     }
                   ]
@@ -543,19 +543,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 65
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 80
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -642,19 +642,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -715,13 +715,13 @@
                     {
                       "id": 10,
                       "name": "TV Broadcast",
-                      "description ": "Integer tincidunt ante vel ipsum.",
+                      "description": "Integer tincidunt ante vel ipsum.",
                       "amount": 30
                     },
                     {
                       "id": 15,
                       "name": "Etimaster Satellite Receiver 45121",
-                      "description ": "Sed accumsan felis.",
+                      "description": "Sed accumsan felis.",
                       "amount": 40
                     }
                   ]
@@ -794,19 +794,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -888,19 +888,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -937,19 +937,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1039,19 +1039,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1088,19 +1088,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1171,19 +1171,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1220,19 +1220,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1269,19 +1269,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1363,19 +1363,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1412,19 +1412,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1461,19 +1461,19 @@
                 {
                   "id": 3,
                   "name": "32 Mbps ADSL",
-                  "description ": "Duis ac nibh.",
+                  "description": "Duis ac nibh.",
                   "amount": 65
                 },
                 {
                   "id": 6,
                   "name": "EtiMaster Data Modem",
-                  "description ": "Nunc nisl.",
+                  "description": "Nunc nisl.",
                   "amount": 80
                 },
                 {
                   "id": 7,
                   "name": "Activation",
-                  "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                  "description": "Duis consequat dui nec nisi volutpat eleifend.",
                   "amount": 30
                 }
               ]
@@ -1611,19 +1611,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -1796,19 +1796,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -1895,19 +1895,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -1949,19 +1949,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2003,19 +2003,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2091,19 +2091,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2145,19 +2145,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2233,19 +2233,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2287,19 +2287,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2341,19 +2341,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2429,19 +2429,19 @@
                     {
                       "id": 4,
                       "name": "70 Mbps VDSL",
-                      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+                      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
                       "amount": 60
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2517,19 +2517,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 57
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 50
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2571,19 +2571,19 @@
                     {
                       "id": 3,
                       "name": "32 Mbps ADSL",
-                      "description ": "Duis ac nibh.",
+                      "description": "Duis ac nibh.",
                       "amount": 65
                     },
                     {
                       "id": 6,
                       "name": "EtiMaster Data Modem",
-                      "description ": "Nunc nisl.",
+                      "description": "Nunc nisl.",
                       "amount": 80
                     },
                     {
                       "id": 7,
                       "name": "Activation",
-                      "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+                      "description": "Duis consequat dui nec nisi volutpat eleifend.",
                       "amount": 30
                     }
                   ]
@@ -2608,19 +2608,19 @@
         {
           "id": 3,
           "name": "32 Mbps ADSL",
-          "description ": "Duis ac nibh.",
+          "description": "Duis ac nibh.",
           "amount": 57
         },
         {
           "id": 6,
           "name": "EtiMaster Data Modem",
-          "description ": "Nunc nisl.",
+          "description": "Nunc nisl.",
           "amount": 50
         },
         {
           "id": 7,
           "name": "Activation",
-          "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+          "description": "Duis consequat dui nec nisi volutpat eleifend.",
           "amount": 30
         }
       ]
@@ -2637,19 +2637,19 @@
         {
           "id": 3,
           "name": "32 Mbps ADSL",
-          "description ": "Duis ac nibh.",
+          "description": "Duis ac nibh.",
           "amount": 65
         },
         {
           "id": 6,
           "name": "EtiMaster Data Modem",
-          "description ": "Nunc nisl.",
+          "description": "Nunc nisl.",
           "amount": 80
         },
         {
           "id": 7,
           "name": "Activation",
-          "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+          "description": "Duis consequat dui nec nisi volutpat eleifend.",
           "amount": 30
         }
       ]
@@ -2666,19 +2666,19 @@
         {
           "id": 4,
           "name": "70 Mbps VDSL",
-          "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+          "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
           "amount": 60
         },
         {
           "id": 6,
           "name": "EtiMaster Data Modem",
-          "description ": "Nunc nisl.",
+          "description": "Nunc nisl.",
           "amount": 50
         },
         {
           "id": 7,
           "name": "Activation",
-          "description ": "Duis consequat dui nec nisi volutpat eleifend.",
+          "description": "Duis consequat dui nec nisi volutpat eleifend.",
           "amount": 30
         }
       ]
@@ -2695,13 +2695,13 @@
         {
           "id": 10,
           "name": "TV Broadcast",
-          "description ": "Integer tincidunt ante vel ipsum.",
+          "description": "Integer tincidunt ante vel ipsum.",
           "amount": 30
         },
         {
           "id": 15,
           "name": "Etimaster Satellite Receiver 45121",
-          "description ": "Sed accumsan felis.",
+          "description": "Sed accumsan felis.",
           "amount": 40
         }
       ]
@@ -2718,25 +2718,25 @@
         {
           "id": 19,
           "name": "Phone Number",
-          "description ": "Sed accumsan felis.",
+          "description": "Sed accumsan felis.",
           "amount": 15
         },
         {
           "id": 16,
           "name": "500 minute Telephone Dialing",
-          "description ": "Sed accumsan felis.",
+          "description": "Sed accumsan felis.",
           "amount": 10
         },
         {
           "id": 17,
           "name": "1000 SMS",
-          "description ": "Duis at velit eu est congue elementum.",
+          "description": "Duis at velit eu est congue elementum.",
           "amount": 5
         },
         {
           "id": 18,
           "name": "15GB Mobile Internet",
-          "description ": "Sed accumsan felis.",
+          "description": "Sed accumsan felis.",
           "amount": 30
         }
       ]
@@ -2746,97 +2746,97 @@
     {
       "id": 1,
       "name": "8 Mbps ADSL",
-      "description ": "Duis at velit eu est congue elementum."
+      "description": "Duis at velit eu est congue elementum."
     },
     {
       "id": 2,
       "name": "16 Mbps ADSL",
-      "description ": "Proin risus."
+      "description": "Proin risus."
     },
     {
       "id": 3,
       "name": "32 Mbps ADSL",
-      "description ": "Duis ac nibh."
+      "description": "Duis ac nibh."
     },
     {
       "id": 4,
       "name": "70 Mbps VDSL",
-      "description ": "In est risus, auctor sed, tristique in, tempus sit amet, sem."
+      "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem."
     },
     {
       "id": 5,
       "name": "100 Mbps Fiber",
-      "description ": "Duis mattis egestas metus."
+      "description": "Duis mattis egestas metus."
     },
     {
       "id": 6,
       "name": "EtiMaster Data Modem",
-      "description ": "Nunc nisl."
+      "description": "Nunc nisl."
     },
     {
       "id": 7,
       "name": "Activation",
-      "description ": "Duis consequat dui nec nisi volutpat eleifend."
+      "description": "Duis consequat dui nec nisi volutpat eleifend."
     },
     {
       "id": 8,
       "name": "Router",
-      "description ": "In hac habitasse platea dictumst."
+      "description": "In hac habitasse platea dictumst."
     },
     {
       "id": 9,
       "name": "Child Protection",
-      "description ": "Suspendisse potenti."
+      "description": "Suspendisse potenti."
     },
     {
       "id": 10,
       "name": "TV Broadcast",
-      "description ": "Integer tincidunt ante vel ipsum."
+      "description": "Integer tincidunt ante vel ipsum."
     },
     {
       "id": 11,
       "name": "EPhone 8S 64GB",
-      "description ": "Nam nulla."
+      "description": "Nam nulla."
     },
     {
       "id": 12,
       "name": "EPhone Home Phone 85432",
-      "description ": "Sed accumsan felis."
+      "description": "Sed accumsan felis."
     },
     {
       "id": 13,
       "name": "EPhone 8S 256GB",
-      "description ": "Lorem accumsan felis."
+      "description": "Lorem accumsan felis."
     },
     {
       "id": 14,
       "name": "Internet Transfer",
-      "description ": "Integer tincidunt ante vel ipsum."
+      "description": "Integer tincidunt ante vel ipsum."
     },
     {
       "id": 15,
       "name": "Etimaster Satellite Receiver 45121",
-      "description ": "Sed accumsan felis."
+      "description": "Sed accumsan felis."
     },
     {
       "id": 16,
       "name": "500 minute Telephone Dialing",
-      "description ": "Sed accumsan felis."
+      "description": "Sed accumsan felis."
     },
     {
       "id": 17,
       "name": "1000 SMS",
-      "description ": "Duis at velit eu est congue elementum."
+      "description": "Duis at velit eu est congue elementum."
     },
     {
       "id": 18,
       "name": "15GB Mobile Internet",
-      "description ": "Sed accumsan felis."
+      "description": "Sed accumsan felis."
     },
     {
       "id": 19,
       "name": "Phone Number",
-      "description ": "Sed accumsan felis."
+      "description": "Sed accumsan felis."
     }
   ],
   "campaigns": [

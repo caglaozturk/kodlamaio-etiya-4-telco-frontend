@@ -67,5 +67,5 @@
 
 .overflow-hidden {
   overflow: hidden !important;
-  padding-top: 125px;
+  padding: 100px 0;
 }

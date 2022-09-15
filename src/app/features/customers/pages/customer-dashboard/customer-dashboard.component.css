@@ -15,3 +15,6 @@
 .table-title th:first-child {
   color: #f58220 !important;
 }
+.table-responsive {
+  overflow-x: hidden;
+}

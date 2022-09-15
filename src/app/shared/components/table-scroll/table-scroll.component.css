@@ -26,7 +26,6 @@
   border-left: 1px solid #f58220;
 }
 ::ng-deep .table-hidden tbody {
-  overflow-y: scroll;
   height: 240px;
   display: block;
 }
