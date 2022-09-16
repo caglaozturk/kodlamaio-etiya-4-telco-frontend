@@ -2,7 +2,7 @@
   display: none;
 }
 :host ::ng-deep .p-toast-center {
-  width: 45rem;
+  width: 50rem;
 }
 .e-offer-detail-message {
   color: #2a5183;
@@ -42,9 +42,26 @@
 }
 
 :host ::ng-deep .p-toast .p-toast-message .p-toast-message-content {
-  padding: 30px;
+  padding: 25px;
 }
 
 :host ::ng-deep .p-toast-message-content {
   display: block;
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-icon-close {
+  height: 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+/*Table Style One*/
+:host ::ng-deep .table .table-header {
+  /* background:#FEC107; */
+  background: rgba(245, 130, 32, 0.75);
+  color: #333;
+}
+:host ::ng-deep .table {
+  font-size: 16px;
 }

@@ -69,3 +69,7 @@
   padding: 30px;
   border: 1px solid #f58220 !important;
 }
+.table-body td,
+.table-body tr th {
+  height: 59px;
+}

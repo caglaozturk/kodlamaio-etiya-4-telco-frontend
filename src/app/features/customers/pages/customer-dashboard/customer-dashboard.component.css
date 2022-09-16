@@ -18,3 +18,7 @@
 .table-responsive {
   overflow-x: hidden;
 }
+::ng-deep .table.e-table {
+  width: 100% !important;
+  height: auto !important;
+}
